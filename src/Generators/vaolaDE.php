@@ -81,6 +81,9 @@ class vaolaDE extends CSVGenerator
 			
 				$this->addCSVContent([
                                 'p_nr',    
+                                'p_name',
+                                'p_text',
+                                'p_brand', 
                                     
                                     /*
 				'Produktname',
@@ -257,7 +260,9 @@ class vaolaDE extends CSVGenerator
         $basePriceComponentList = $this->getBasePriceComponentList($item);
 		$data = [
                     'ID'				=> $item->variationBase->id, 
-                    
+                    'Produktname'			=> $this->vaolaHelper->getName($item, $settings, 150),
+                    'Beschreibung'			=> $this->vaolaHelper->getDescription($item, $settings, 5000),
+                    'Hersteller'			=> $this->vaolaHelper->getExternalManufacturerName($item->itemBase->producerId),
                     
 			/*'Produktname'			=> $this->vaolaHelper->getName($item, $settings, 150),
 			'Artikelnummer'			=> $item->itemBase->id,
@@ -330,6 +335,9 @@ class vaolaDE extends CSVGenerator
         $stockList = $this->getStockList($item);
 		$data = [
                     'ID'				=> '',
+                    'Produktname'			=> $this->vaolaHelper->getName($item, $settings, 150),
+                    'Beschreibung'			=> $this->vaolaHelper->getDescription($item, $settings, 5000),
+                    'Hersteller'			=> $this->vaolaHelper->getExternalManufacturerName($item->itemBase->producerId),
                     /*
 			'Produktname'			=> $this->vaolaHelper->getName($item, $settings, 150),
 			'Artikelnummer'			=> $item->itemBase->id,
@@ -403,6 +411,9 @@ class vaolaDE extends CSVGenerator
         $basePriceComponentList = $this->getBasePriceComponentList($item);
 		$data = [
                     'ID'				=> $item->variationBase->id,
+                    'Produktname'			=> $this->vaolaHelper->getName($item, $settings, 150),
+                    'Beschreibung'			=> $this->vaolaHelper->getDescription($item, $settings, 5000),
+                    'Hersteller'			=> $this->vaolaHelper->getExternalManufacturerName($item->itemBase->producerId),
                     /*
 			'Produktname'			=> $this->vaolaHelper->getName($item, $settings, 150),
 			'Artikelnummer'			=> $item->itemBase->id,
