@@ -51,7 +51,7 @@ class vaolaDE extends ResultFields
         {
             $itemDescriptionFields[] = 'technicalData';
         }
-		$fields = [/*
+		$fields = [
 			'itemBase'=> [
 				'id',
 				'producerId',
@@ -173,7 +173,7 @@ class vaolaDE extends ResultFields
 				'attributeId',
 				'attributeValueId'
 			]
-		*/];
+		];
 		return $fields;
 	}
 }
