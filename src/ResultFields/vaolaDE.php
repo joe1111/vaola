@@ -29,10 +29,10 @@ class vaolaDE extends ResultFields
 	public function generateResultFields(array $formatSettings = []):array
 	{
 		$settings = $this->arrayHelper->buildMapFromObjectList($formatSettings, 'key', 'value');
-        $this->setOrderByList(['orderBy.itemId' => 'asc']);
+            $this->setOrderByList(['orderBy.itemId' => 'asc']);
         $itemDescriptionFields = ['urlContent'];
         $itemDescriptionFields[] = ($settings->get('nameId')) ? 'name' . $settings->get('nameId') : 'name1';
-		if($settings->get('descriptionType') == 'itemShortDescription'
+	/*	if($settings->get('descriptionType') == 'itemShortDescription'
             || $settings->get('previewTextType') == 'itemShortDescription')
         {
             $itemDescriptionFields[] = 'shortDescription';
@@ -173,7 +173,7 @@ class vaolaDE extends ResultFields
 				'attributeId',
 				'attributeValueId'
 			]
-		];
+		];*/
 		return $fields;
 	}
 }

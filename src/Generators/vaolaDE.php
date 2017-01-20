@@ -57,8 +57,6 @@ class vaolaDE extends CSVGenerator
 	{
 		if($resultData instanceof RecordList)
 		{
-			
-			
 			$settings = $this->arrayHelper->buildMapFromObjectList($formatSettings, 'key', 'value');
 			$this->setDelimiter(";");
 			
@@ -74,19 +72,6 @@ class vaolaDE extends CSVGenerator
 			]);
 			
 			
-			
-			
-	$data = [
-			'external_id'			=> '1',
-			'external_parent_id'	=> '0',
-			'categoryname'			=> 'alle Produkte',
-			'active'				=> '1',
-			'sort'					=> '0',
-			'level'					=> '0',
-		
-		];
-		$this->addCSVContent(array_values($data));
-			
 			//Kategorien
 			$this->addCSVContent([
 				'',
@@ -94,7 +79,7 @@ class vaolaDE extends CSVGenerator
 			
 			
 			
-						$this->addCSVContent([
+				$this->addCSVContent([
 				'Produktname',
 				'Artikelnummer',
 				'ean',
