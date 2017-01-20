@@ -80,10 +80,31 @@ class vaolaDE extends CSVGenerator
 			
 			
 				$this->addCSVContent([
-                                'p_nr',    
-                                'p_name',
-                                'p_text',
-                                'p_brand', 
+                                    'p_nr',    
+                                    'p_name',
+                                    'p_text',
+                                    'p_brand', 
+                                    'p_catpri[vaola]', 
+                                    'p_active[vaola]', 
+                                    'p_active[msde]', 
+                                    'a_comp[Primärfarbe]', 
+                                    'p_tag[Sekundärfarbe]', 
+                                    'p_tag[Größenart]', 
+                                    'p_tag[Geschlecht]', 
+                                    'p_tag[Sportart]', 
+                                    'p_tag[Material]', 
+                                    'a_nr', 
+                                    'a_ean', 
+                                    'a_comp[Größe]', 
+                                    'a_vk[msde]', 
+                                    'a_uvp[msde]', 
+                                    'a_mwst[msde]', 
+                                    'a_media[image]{0}', 
+                                    'a_media[image]{1}', 
+                                    'a_active', 
+                                    'a_stock', 
+                                    'a_delivery', 
+                                    'a_shipping_type', 
                                     
                                     /*
 				'Produktname',
@@ -259,10 +280,37 @@ class vaolaDE extends CSVGenerator
         $priceList = $this->getPriceList($item, $settings);
         $basePriceComponentList = $this->getBasePriceComponentList($item);
 		$data = [
-                    'ID'				=> $item->variationBase->id, 
+                    'ID'				=> $item->itemBase->id,
                     'Produktname'			=> $this->vaolaHelper->getName($item, $settings, 150),
                     'Beschreibung'			=> $this->vaolaHelper->getDescription($item, $settings, 5000),
                     'Hersteller'			=> $this->vaolaHelper->getExternalManufacturerName($item->itemBase->producerId),
+                    'p_catpri[vaola]'                   => '', 
+                    'p_active[vaola]'                   => '1', 
+                    'p_active[msde]'                    => '1', 
+                    'a_comp[Primärfarbe]'               => '', 
+                    'p_tag[Sekundärfarbe]'              => '', 
+                    'p_tag[Größenart]'                  => '', 
+                    'p_tag[Geschlecht]'                 => '', 
+                    'p_tag[Sportart]'                   => 'Radsport', 
+                    'p_tag[Material]'                   => '', 
+                    'a_nr'                              => $item->variationBase->id,
+                    'a_ean'                             => $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
+                    'a_comp[Größe]'                     => '', 
+                    'a_vk[msde]'                        => '', 
+                    'a_uvp[msde]'                       => '', 
+                    'a_mwst[msde]'                      => '', 
+                    'a_media[image]{0}'                 => '', 
+                    'a_media[image]{1}'                 => '', 
+                    'a_media[image]{2}'                 => '', 
+                    'a_media[image]{3}'                 => '', 
+                    'a_media[image]{4}'                 => '', 
+                    'a_active'                          => '', 
+                    'a_stock'                           => '', 
+                    'a_delivery'                        => '', 
+                    'a_shipping_type'                   => 'DHL_STD', 
+                    
+                    
+                    
                     
 			/*'Produktname'			=> $this->vaolaHelper->getName($item, $settings, 150),
 			'Artikelnummer'			=> $item->itemBase->id,
@@ -334,10 +382,39 @@ class vaolaDE extends CSVGenerator
         $vat = $this->getVatClassId($item);
         $stockList = $this->getStockList($item);
 		$data = [
-                    'ID'				=> '',
+                    'ID'				=> $item->itemBase->id,
                     'Produktname'			=> $this->vaolaHelper->getName($item, $settings, 150),
                     'Beschreibung'			=> $this->vaolaHelper->getDescription($item, $settings, 5000),
                     'Hersteller'			=> $this->vaolaHelper->getExternalManufacturerName($item->itemBase->producerId),
+                    'p_catpri[vaola]'                   => '', 
+                    'p_active[vaola]'                   => '1', 
+                    'p_active[msde]'                    => '1', 
+                    'a_comp[Primärfarbe]'               => '', 
+                    'p_tag[Sekundärfarbe]'              => '', 
+                    'p_tag[Größenart]'                  => '', 
+                    'p_tag[Geschlecht]'                 => '', 
+                    'p_tag[Sportart]'                   => 'Radsport', 
+                    'p_tag[Material]'                   => '', 
+                    'a_nr'                              => $item->variationBase->id,
+                    'a_ean'                             => $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
+                    'a_comp[Größe]'                     => '', 
+                    'a_vk[msde]'                        => '', 
+                    'a_uvp[msde]'                       => '', 
+                    'a_mwst[msde]'                      => '', 
+                    'a_media[image]{0}'                 => '', 
+                    'a_media[image]{1}'                 => '', 
+                    'a_media[image]{2}'                 => '', 
+                    'a_media[image]{3}'                 => '', 
+                    'a_media[image]{4}'                 => '', 
+                    'a_active'                          => '', 
+                    'a_stock'                           => '', 
+                    'a_delivery'                        => '', 
+                    'a_shipping_type'                   => 'DHL_STD', 
+                    
+                    
+                    
+                    
+                    
                     /*
 			'Produktname'			=> $this->vaolaHelper->getName($item, $settings, 150),
 			'Artikelnummer'			=> $item->itemBase->id,
@@ -410,10 +487,42 @@ class vaolaDE extends CSVGenerator
         $priceList = $this->getPriceList($item, $settings);
         $basePriceComponentList = $this->getBasePriceComponentList($item);
 		$data = [
-                    'ID'				=> $item->variationBase->id,
+                    'ID'				=> $item->itemBase->id,
                     'Produktname'			=> $this->vaolaHelper->getName($item, $settings, 150),
                     'Beschreibung'			=> $this->vaolaHelper->getDescription($item, $settings, 5000),
                     'Hersteller'			=> $this->vaolaHelper->getExternalManufacturerName($item->itemBase->producerId),
+                    'p_catpri[vaola]'                   => '', 
+                    'p_active[vaola]'                   => '1', 
+                    'p_active[msde]'                    => '1', 
+                    'a_comp[Primärfarbe]'               => '', 
+                    'p_tag[Sekundärfarbe]'              => '', 
+                    'p_tag[Größenart]'                  => '', 
+                    'p_tag[Geschlecht]'                 => '', 
+                    'p_tag[Sportart]'                   => 'Radsport', 
+                    'p_tag[Material]'                   => '', 
+                    'a_nr'                              => $item->variationBase->id,
+                    'a_ean'                             => $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
+                    'a_comp[Größe]'                     => '', 
+                    'a_vk[msde]'                        => '', 
+                    'a_uvp[msde]'                       => '', 
+                    'a_mwst[msde]'                      => '', 
+                    'a_media[image]{0}'                 => '', 
+                    'a_media[image]{1}'                 => '', 
+                    'a_media[image]{2}'                 => '', 
+                    'a_media[image]{3}'                 => '', 
+                    'a_media[image]{4}'                 => '', 
+                    'a_active'                          => '', 
+                    'a_stock'                           => '', 
+                    'a_delivery'                        => '', 
+                    'a_shipping_type'                   => 'DHL_STD', 
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     /*
 			'Produktname'			=> $this->vaolaHelper->getName($item, $settings, 150),
 			'Artikelnummer'			=> $item->itemBase->id,
