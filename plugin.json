@@ -1,0 +1,8 @@
+{
+  "name": "vaola",
+  "description": null,
+  "namespace": "vaola",
+  "author": "vaola",
+  "type": "export",
+  "serviceProvider": "vaola\\vaolaServiceProvider"
+}
