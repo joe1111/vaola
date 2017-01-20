@@ -80,6 +80,9 @@ class vaolaDE extends CSVGenerator
 			
 			
 				$this->addCSVContent([
+                                'p_nr',    
+                                    
+                                    /*
 				'Produktname',
 				'Artikelnummer',
 				'ean',
@@ -136,7 +139,7 @@ class vaolaDE extends CSVGenerator
 				'Energieefiizienzbild',
 				'UVP',
 				'EVP',
-			]);
+			*/]);
 			$currentItemId = null;
 			$previousItemId = null;
 			$variations = array();
@@ -253,7 +256,10 @@ class vaolaDE extends CSVGenerator
         $priceList = $this->getPriceList($item, $settings);
         $basePriceComponentList = $this->getBasePriceComponentList($item);
 		$data = [
-			'Produktname'			=> $this->vaolaHelper->getName($item, $settings, 150),
+                    'ID'				=> $item->variationBase->id, 
+                    
+                    
+			/*'Produktname'			=> $this->vaolaHelper->getName($item, $settings, 150),
 			'Artikelnummer'			=> $item->itemBase->id,
 			'ean'				=> $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
 			'Hersteller'			=> $this->vaolaHelper->getExternalManufacturerName($item->itemBase->producerId),
@@ -308,7 +314,7 @@ class vaolaDE extends CSVGenerator
 			'Energieefiizienz'		=> $this->getItemPropertyByExternalComponent($item, 106.00, self::PROPERTY_TYPE_ENERGY_CLASS),
 			'Energieefiizienzbild'		=> '',
 			'UVP'				=> number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', ''),
-			'EVP'				=> number_format($this->vaolaHelper->getSpecialPrice($item, $settings), 2, '.', ''),
+			'EVP'				=> number_format($this->vaolaHelper->getSpecialPrice($item, $settings), 2, '.', ''),*/
 		];
 		$this->addCSVContent(array_values($data));
 	}
@@ -323,6 +329,8 @@ class vaolaDE extends CSVGenerator
         $vat = $this->getVatClassId($item);
         $stockList = $this->getStockList($item);
 		$data = [
+                    'ID'				=> '',
+                    /*
 			'Produktname'			=> $this->vaolaHelper->getName($item, $settings, 150),
 			'Artikelnummer'			=> $item->itemBase->id,
 			'ean'				=> $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
@@ -378,7 +386,7 @@ class vaolaDE extends CSVGenerator
 			'Energieefiizienz'		=> $this->getItemPropertyByExternalComponent($item, 106.00, self::PROPERTY_TYPE_ENERGY_CLASS),
 			'Energieefiizienzbild'		=> '',
 			'UVP'				=> number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', ''),
-			'EVP'				=> number_format($this->vaolaHelper->getSpecialPrice($item, $settings), 2, '.', ''),
+			'EVP'				=> number_format($this->vaolaHelper->getSpecialPrice($item, $settings), 2, '.', ''),*/
 		];
 		$this->addCSVContent(array_values($data));
 	}
@@ -394,6 +402,8 @@ class vaolaDE extends CSVGenerator
         $priceList = $this->getPriceList($item, $settings);
         $basePriceComponentList = $this->getBasePriceComponentList($item);
 		$data = [
+                    'ID'				=> $item->variationBase->id,
+                    /*
 			'Produktname'			=> $this->vaolaHelper->getName($item, $settings, 150),
 			'Artikelnummer'			=> $item->itemBase->id,
 			'ean'				=> $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
@@ -450,7 +460,7 @@ class vaolaDE extends CSVGenerator
 			'Energieefiizienzbild'		=> '',
 			'UVP'				=> number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', ''),
 			'EVP'				=> number_format($this->vaolaHelper->getSpecialPrice($item, $settings), 2, '.', ''),
-		];
+		*/];
 		$this->addCSVContent(array_values($data));
 	}
 	/**
