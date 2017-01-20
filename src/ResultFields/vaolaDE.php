@@ -32,7 +32,7 @@ class vaolaDE extends ResultFields
             $this->setOrderByList(['orderBy.itemId' => 'asc']);
         $itemDescriptionFields = ['urlContent'];
         $itemDescriptionFields[] = ($settings->get('nameId')) ? 'name' . $settings->get('nameId') : 'name1';
-	/*	if($settings->get('descriptionType') == 'itemShortDescription'
+		if($settings->get('descriptionType') == 'itemShortDescription'
             || $settings->get('previewTextType') == 'itemShortDescription')
         {
             $itemDescriptionFields[] = 'shortDescription';
@@ -173,7 +173,7 @@ class vaolaDE extends ResultFields
 				'attributeId',
 				'attributeValueId'
 			]
-		];*/
+		];
 		return $fields;
 	}
 }

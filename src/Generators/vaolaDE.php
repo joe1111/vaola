@@ -62,7 +62,7 @@ class vaolaDE extends CSVGenerator
 			
 			//Kategorien
 			
-			$this->addCSVContent([
+			/*$this->addCSVContent([
 				'external_id',
 				'external_parent_id',
 				'categoryname',
@@ -75,7 +75,7 @@ class vaolaDE extends CSVGenerator
 			//Kategorien
 			$this->addCSVContent([
 				'',
-			]);
+			]);*/
 			
 			
 			
