@@ -229,7 +229,7 @@ class vaolaDE extends CSVGenerator
 				if($variation->variationBase->primaryVariation === true)
 				{
 					$primaryVariationKey = $key;
-                                        continue;
+                                        
 				}
 			}
 			// change sort of array and add primary variation as first entry
@@ -253,17 +253,17 @@ class vaolaDE extends CSVGenerator
 				}
 				elseif($variation->variationBase->primaryVariation === false && $i == 1)
 				{
-					$this->buildParentWithChildrenRow($variation, $settings, $this->attributeName);
+					//$this->buildParentWithChildrenRow($variation, $settings, $this->attributeName);
 					$this->buildChildRow($variation, $settings, $attributeValue);
 				}
 				elseif($variation->variationBase->primaryVariation === true && strlen($attributeValue) > 0)
 				{
-					$this->buildParentWithChildrenRow($variation, $settings, $this->attributeName);
+					//$this->buildParentWithChildrenRow($variation, $settings, $this->attributeName);
 					$this->buildChildRow($variation, $settings, $attributeValue);
 				}
 				elseif($variation->variationBase->primaryVariation === true && strlen($attributeValue) == 0)
 				{
-					$this->buildParentWithChildrenRow($variation, $settings, $this->attributeName);
+					//$this->buildParentWithChildrenRow($variation, $settings, $this->attributeName);
 				}
 				else
 				{
