@@ -229,6 +229,7 @@ class vaolaDE extends CSVGenerator
 				if($variation->variationBase->primaryVariation === true)
 				{
 					$primaryVariationKey = $key;
+                                        continue;
 				}
 			}
 			// change sort of array and add primary variation as first entry
@@ -481,9 +482,9 @@ class vaolaDE extends CSVGenerator
 			'EVP'				=> number_format($this->vaolaHelper->getSpecialPrice($item, $settings), 2, '.', ''),*/
 		];
 		
- // DO NOT ADD THIS ROW FOR VAOLA!!
-//$this->addCSVContent(array_values($data));
-                // DO NOT ADD THIS ROW FOR VAOLA!!
+ 
+                $this->addCSVContent(array_values($data));
+                
 	}
 	/**
 	 * @param Record $item
