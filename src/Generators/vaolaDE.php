@@ -402,7 +402,7 @@ class vaolaDE extends CSVGenerator
                     'p_tag[Geschlecht]'                 => '', 
                     'p_tag[Sportart]'                   => 'Radsport', 
                     'p_tag[Material]'                   => '', 
-                    'a_nr'                              => $item->variationBase->id,
+                    'a_nr'                              => '',
                     'a_ean'                             => $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
                     'a_comp[Größe]'                     => '', 
                     'a_vk[msde]'                        => number_format($this->vaolaHelper->getPrice($item), 2, '.', ''),
