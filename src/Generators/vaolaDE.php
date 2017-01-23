@@ -297,7 +297,7 @@ class vaolaDE extends CSVGenerator
                     'p_tag[Geschlecht]'                 => '', 
                     'p_tag[Sportart]'                   => 'Radsport', 
                     'p_tag[Material]'                   => '', 
-                    'a_nr'                              => $item->variationBase->id,
+                    'a_nr'                              => '',
                     'a_ean'                             => $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
                     'a_comp[Größe]'                     => '', 
                     'a_vk[msde]'                        => number_format($this->vaolaHelper->getPrice($item), 2, '.', ''),
@@ -399,7 +399,7 @@ class vaolaDE extends CSVGenerator
                     'p_tag[Geschlecht]'                 => '', 
                     'p_tag[Sportart]'                   => 'Radsport', 
                     'p_tag[Material]'                   => '', 
-                    'a_nr'                              => $item->variationBase->id,
+                    'a_nr'                              => '',
                     'a_ean'                             => $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
                     'a_comp[Größe]'                     => '', 
                     'a_vk[msde]'                        => number_format($this->vaolaHelper->getPrice($item), 2, '.', ''),
@@ -487,10 +487,13 @@ class vaolaDE extends CSVGenerator
 	 */
 	private function buildChildRow(Record $item, KeyValue $settings, string $attributeValue = '')
 	{
+            
+            
+            
         $stockList = $this->getStockList($item);
         $priceList = $this->getPriceList($item, $settings);
         $basePriceComponentList = $this->getBasePriceComponentList($item);
-		$data = [
+		$data = [                    
                     'ID'				=> $item->itemBase->id,
                     'Produktname'			=> $this->vaolaHelper->getName($item, $settings, 150),
                     'Beschreibung'			=> $this->vaolaHelper->getDescription($item, $settings, 5000),
