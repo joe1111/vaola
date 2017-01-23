@@ -175,8 +175,8 @@ class vaolaDE extends CSVGenerator
 				// Case first variation
 				if ($currentItemId === null)
 				{
-					//$previousItemId = $variation->itemBase->id;
-                                        continue;
+					$previousItemId = $variation->itemBase->id;
+                                        
 				}
 				$currentItemId = $variation->itemBase->id;
 				// Check if it's the same item
