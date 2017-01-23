@@ -290,7 +290,7 @@ class vaolaDE extends CSVGenerator
                     'Hersteller'			=> $this->vaolaHelper->getExternalManufacturerName($item->itemBase->producerId),
                     'p_catpri[vaola]'                   => '', 
                     'p_active[vaola]'                   => '1', 
-                    'p_active[msde]'                    => $item->itemBase->active,  
+                    'p_active[msde]'                    => $item->itemBase->active . ' / '.$stockList['variationAvailable'],  
                     'a_comp[Primärfarbe]'               => '', 
                     'p_tag[Sekundärfarbe]'              => '', 
                     'p_tag[Größenart]'                  => '', 
@@ -373,6 +373,9 @@ class vaolaDE extends CSVGenerator
 			'UVP'				=> number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', ''),
 			'EVP'				=> number_format($this->vaolaHelper->getSpecialPrice($item, $settings), 2, '.', ''),*/
 		];
+                
+                
+                
 		$this->addCSVContent(array_values($data));
 	}
 	/**
@@ -392,7 +395,7 @@ class vaolaDE extends CSVGenerator
                     'Hersteller'			=> $this->vaolaHelper->getExternalManufacturerName($item->itemBase->producerId),
                     'p_catpri[vaola]'                   => '', 
                     'p_active[vaola]'                   => '1', 
-                    'p_active[msde]'                    => $item->itemBase->active,
+                    'p_active[msde]'                    => $item->variationBase->active . ' / '.$stockList['variationAvailable'],
                     'a_comp[Primärfarbe]'               => '', 
                     'p_tag[Sekundärfarbe]'              => '', 
                     'p_tag[Größenart]'                  => '', 
@@ -500,7 +503,7 @@ class vaolaDE extends CSVGenerator
                     'Hersteller'			=> $this->vaolaHelper->getExternalManufacturerName($item->itemBase->producerId),
                     'p_catpri[vaola]'                   => '', 
                     'p_active[vaola]'                   => '1', 
-                    'p_active[msde]'                    => $item->itemBase->active,
+                    'p_active[msde]'                    => $item->variationBase->active . ' / '.$stockList['variationAvailable'],
                     'a_comp[Primärfarbe]'               => '', 
                     'p_tag[Sekundärfarbe]'              => '', 
                     'p_tag[Größenart]'                  => '', 
