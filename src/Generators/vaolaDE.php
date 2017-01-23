@@ -480,7 +480,10 @@ class vaolaDE extends CSVGenerator
 			'UVP'				=> number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', ''),
 			'EVP'				=> number_format($this->vaolaHelper->getSpecialPrice($item, $settings), 2, '.', ''),*/
 		];
-		$this->addCSVContent(array_values($data));
+		
+ // DO NOT ADD THIS ROW FOR VAOLA!!
+//$this->addCSVContent(array_values($data));
+                // DO NOT ADD THIS ROW FOR VAOLA!!
 	}
 	/**
 	 * @param Record $item
