@@ -395,7 +395,7 @@ class vaolaDE extends CSVGenerator
                     'Beschreibung'			=> $this->vaolaHelper->getDescription($item, $settings, 5000),
                     'Hersteller'			=> $this->vaolaHelper->getExternalManufacturerName($item->itemBase->producerId),
                     'p_catpri[vaola]'                   => $item->itemBase->free7, 
-                    'p_active[vaola]'                   => '2', 
+                    'p_active[vaola]'                   => '1', 
                     'p_active[msde]'                    => '1', 
                     'a_comp[Primärfarbe]'               => $this->vaolaHelper->getAttributeValueSetShortFrontendName($item, $settings), 
                     'p_tag[Sekundärfarbe]'              => '', 
@@ -503,8 +503,7 @@ class vaolaDE extends CSVGenerator
             $sizetype = "";
             
             
-            for($i = 0; $i < count($aattributenames); $i++){
-                
+            for($i = 0; $i < count($aattributenames); $i++){                
                 if($aattributenames[$i] == "Farbe"){
                     $primarycolor = $aattributes[$i];
                 }
@@ -516,8 +515,6 @@ class vaolaDE extends CSVGenerator
                     $size = $aattributes[$i];
                     $sizetype = "Größe";
                 }
-                
-                
             }
             
         $stockList = $this->getStockList($item);
@@ -529,7 +526,7 @@ class vaolaDE extends CSVGenerator
                     'Beschreibung'			=> $this->vaolaHelper->getDescription($item, $settings, 5000),
                     'Hersteller'			=> $this->vaolaHelper->getExternalManufacturerName($item->itemBase->producerId),
                     'p_catpri[vaola]'                   => $item->itemBase->free7, 
-                    'p_active[vaola]'                   => '3-1', 
+                    'p_active[vaola]'                   => '1', 
                     'p_active[msde]'                    => '1', 
                     'a_comp[Primärfarbe]'               => $primarycolor, 
                     'p_tag[Sekundärfarbe]'              => '', 
