@@ -512,7 +512,10 @@ class vaolaDE extends CSVGenerator
                     $size = $aattributes[$i];
                     $sizetype = "Rahmengröße";
                 }
-                
+                 elseif($aattributenames[$i] == "Größe"){
+                    $size = $aattributes[$i];
+                    $sizetype = "Größe";
+                }
                 
                 
             }
