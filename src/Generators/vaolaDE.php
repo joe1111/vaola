@@ -517,6 +517,13 @@ class vaolaDE extends CSVGenerator
                 }
             }
             
+            if($primarycolor == ""){
+                $primarycolor = $this->vaolaHelper->getItemCharacterByBackendName($item, $settings, "Farbe");
+            }
+            
+            
+            
+            
         $stockList = $this->getStockList($item);
         $priceList = $this->getPriceList($item, $settings);
         $basePriceComponentList = $this->getBasePriceComponentList($item);
