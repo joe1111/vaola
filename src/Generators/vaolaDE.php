@@ -495,13 +495,13 @@ class vaolaDE extends CSVGenerator
 	private function buildChildRow(Record $item, KeyValue $settings, string $attributeValue = '')
 	{
             $sattributes = $this->vaolaHelper->getAttributeValueSetShortFrontendName($item, $settings);
-            $aattributes = explode($sattributes, ",");            
+            $aattributes = explode(",", $sattributes);            
             $sattributenames = $this->vaolaHelper->getAttributeName($item, $settings);
-            $aattributenames = explode($sattributenames, " ");            
+            $aattributenames = explode(" ", $sattributenames);            
             $primarycolor = "";
             $framesize = "";
             
-            for($i = 0; $i < sizeof($aattributenames); $i++){
+            for($i = 0; $i < count($aattributenames); $i++){
                 
                 if($aattributenames[$i] == "Farbe"){
                     $primarycolor = $aattributes[$i];
