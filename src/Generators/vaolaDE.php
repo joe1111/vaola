@@ -494,8 +494,20 @@ class vaolaDE extends CSVGenerator
 	 */
 	private function buildChildRow(Record $item, KeyValue $settings, string $attributeValue = '')
 	{
+            $sattributes = $this->vaolaHelper->getAttributeValueSetShortFrontendName($item, $settings);
+            $aattributes = explode($sattributes, ",");            
+            $sattributenames = $this->vaolaHelper->getAttributeName($item, $settings);
+            $aattributenames = explode($sattributenames, " ");            
+            $primarycolor = "";
+            $framesize = "";
             
-            
+            for($i = 0; $i < sizeof($aattributenames); $i++){
+                
+                if($aattributenames[$i] == "Farbe"){
+                    $primarycolor = $aattributes[$i];
+                }
+                
+            }
             
         $stockList = $this->getStockList($item);
         $priceList = $this->getPriceList($item, $settings);
@@ -508,7 +520,7 @@ class vaolaDE extends CSVGenerator
                     'p_catpri[vaola]'                   => $item->itemBase->free7, 
                     'p_active[vaola]'                   => '3', 
                     'p_active[msde]'                    => '1', 
-                    'a_comp[Primärfarbe]'               => $this->vaolaHelper->getAttributeValueSetShortFrontendName($item, $settings), 
+                    'a_comp[Primärfarbe]'               => $primarycolor, 
                     'p_tag[Sekundärfarbe]'              => '', 
                     'p_tag[Größenart]'                  => '', 
                     'p_tag[Geschlecht]'                 => '', 
