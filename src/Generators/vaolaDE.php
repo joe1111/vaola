@@ -499,13 +499,21 @@ class vaolaDE extends CSVGenerator
             $sattributenames = $this->vaolaHelper->getAttributeName($item, $settings);
             $aattributenames = explode(" ", $sattributenames);            
             $primarycolor = "";
-            $framesize = "";
+            $size = "";
+            $sizetype = "";
+            
             
             for($i = 0; $i < count($aattributenames); $i++){
                 
                 if($aattributenames[$i] == "Farbe"){
                     $primarycolor = $aattributes[$i];
                 }
+                elseif($aattributenames[$i] == "Rahmengröße"){
+                    $size = $aattributes[$i];
+                    $sizetype = "Rahmengröße";
+                }
+                
+                
                 
             }
             
@@ -522,13 +530,13 @@ class vaolaDE extends CSVGenerator
                     'p_active[msde]'                    => '1', 
                     'a_comp[Primärfarbe]'               => $primarycolor, 
                     'p_tag[Sekundärfarbe]'              => '', 
-                    'p_tag[Größenart]'                  => '', 
+                    'p_tag[Größenart]'                  => $sizetype, 
                     'p_tag[Geschlecht]'                 => '', 
                     'p_tag[Sportart]'                   => '', 
                     'p_tag[Material]'                   => '', 
                     'a_nr'                              => $item->variationBase->id,
                     'a_ean'                             => $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
-                    'a_comp[Größe]'                     => '', 
+                    'a_comp[Größe]'                     => $size, 
                     'a_vk[msde]'                        => number_format($this->vaolaHelper->getPrice($item), 2, '.', ''),
                     'a_uvp[msde]'                       => number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', ''),
                     'a_mwst[msde]'                      => '2', 
