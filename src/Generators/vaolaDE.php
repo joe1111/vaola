@@ -518,7 +518,7 @@ class vaolaDE extends CSVGenerator
                     'Beschreibung'			=> $this->vaolaHelper->getDescription($item, $settings, 5000),
                     'Hersteller'			=> $this->vaolaHelper->getExternalManufacturerName($item->itemBase->producerId),
                     'p_catpri[vaola]'                   => $item->itemBase->free7, 
-                    'p_active[vaola]'                   => '3', 
+                    'p_active[vaola]'                   => '3-1', 
                     'p_active[msde]'                    => '1', 
                     'a_comp[Primärfarbe]'               => $primarycolor, 
                     'p_tag[Sekundärfarbe]'              => '', 
