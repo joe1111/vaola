@@ -793,18 +793,20 @@ class vaolaHelper
         
         $marketProperties = $this->marketPropertyHelperRepository->getMarketProperty($marketId);
         
-        foreach($marketProperties as $marketProperty)
+        return $marketProperties;
+        
+        /*foreach($marketProperties as $marketProperty)
         {
             $props = $props . $marketProperty . " / ";
         
         }
         
-        /*foreach($item->itemPropertyList as $property)
+        foreach($item->itemPropertyList as $property)
         {
             $props = $props . $this->propertyNameRepository->findOne($property->propertyId, $settings->get('lang')? $settings->get('lang') : 'de') . " / ";
-        }*/
+        }
         
-        return $props;
+        return $props;*/
         
         
     }
