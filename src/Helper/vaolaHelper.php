@@ -790,20 +790,14 @@ class vaolaHelper
     public function getProperties(Record $item, KeyValue $settings, float $marketId)
     {
         
+        $props = "";
+         
         
-        $marketProperties = $this->marketPropertyHelperRepository->getMarketProperty($marketId);
-        $props = count($marketProperties) ." ";
-                
-        foreach($marketProperties as $marketProperty)
+        foreach($item->itemPropertyList as $property)
         {
-            $props = $props . $marketProperty . " / ";
-        
+            $props = $props . $property->marketComponents . " / " . $property->id . " -- ";
+            //$props = $props . $this->propertyNameRepository->findOne($property->propertyId, $settings->get('lang')? $settings->get('lang') : 'de') . " / ";
         }
-        
-        /*foreach($item->itemPropertyList as $property)
-        {
-            $props = $props . $this->propertyNameRepository->findOne($property->propertyId, $settings->get('lang')? $settings->get('lang') : 'de') . " / ";
-        }*/
         
         return $props;
         
