@@ -517,7 +517,7 @@ class vaolaDE extends CSVGenerator
             }
             
             if($primarycolor == ""){                
-                $primarycolor = $this->vaolaHelper->getProperties($item, $settings, 4.01);
+                $primarycolor = $this->vaolaHelper->getProperties($item, $settings, 7);
                 
                  
             }           

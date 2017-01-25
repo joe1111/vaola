@@ -795,7 +795,7 @@ class vaolaHelper
         
         foreach($marketProperties as $marketProperty)
         {
-            $props = $props . $marketProperty['external_component'] . " / ";
+            $props = $props . $marketProperty . " / ";
         
         }
         
