@@ -789,8 +789,14 @@ class vaolaHelper
     
     public function getProperties(Record $item, KeyValue $settings)
     {
+        $props = "";
         
-        return $item->itemPropertyList;
+        foreach($item->itemPropertyList as $property)
+        {
+            $props = $props . $propertyName . " : " . $property->propertyValue . " / ";
+        }
+        
+        return $props;
         
         
     }
