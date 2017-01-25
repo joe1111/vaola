@@ -787,25 +787,19 @@ class vaolaHelper
         return '';
     }
     
-    public function getProperties(Record $item, KeyValue $settings, float $marketId)
+    public function getProperties(Record $item, KeyValue $settings)
     {
         
         $props = "";
         
         foreach($item->itemPropertyList as $property)
         {
-            foreach($property as $data){
-                
-                foreach($data as $k => $d){
-                    $props = $props . $k . ":" . $d . " / ";
-                }
-                
-                
-                
-            }
+            $props = $props . $this->propertyNameRepository->findOne($property->propertyId, $settings->get('lang')? $settings->get('lang') : 'de') . " / ";
+            
+            $arr =  $property->toArray();
+            $props =$props . $arr;
             
             
-            //$props = $props . $this->propertyNameRepository->findOne($property->propertyId, $settings->get('lang')? $settings->get('lang') : 'de') . " / ";
         }
         
         return $props;
