@@ -54,6 +54,10 @@ class vaolaHelper
     const TRANSFER_RRP_NO = 0;
     const BARCODE_EAN = 'EAN_13';
     const BARCODE_ISBN = 'ISBN';
+    
+    private $propertyRepositoryContract;
+    
+    
     /**
      * CategoryBranchRepositoryContract $categoryBranchRepository
      */
@@ -132,7 +136,8 @@ class vaolaHelper
 	 * @param MarketPropertyHelperRepositoryContract $marketPropertyHelperRepository
 	 * @param MarketAttributeHelperRepositoryContract $marketAttributeHelperRepository
      */
-    public function __construct(CategoryBranchRepositoryContract $categoryBranchRepository,
+    public function __construct(PropertyRepositoryContract $propertyRepositoryContract,
+                                CategoryBranchRepositoryContract $categoryBranchRepository,
                                 UnitNameRepositoryContract $unitNameRepository,
                                 PropertyNameRepositoryContract $propertyNameRepository,                                
                                 CategoryBranchMarketplaceRepositoryContract $categoryBranchMarketplaceRepository,
@@ -149,6 +154,7 @@ class vaolaHelper
 								MarketAttributeHelperRepositoryContract $marketAttributeHelperRepository
     )
     {
+        $this->propertyRepositoryContract = $propertyRepositoryContract;
         $this->categoryBranchRepository = $categoryBranchRepository;
 		$this->unitNameRepository = $unitNameRepository;
 		$this->propertyNameRepository = $propertyNameRepository;                
@@ -794,11 +800,6 @@ class vaolaHelper
     {
         
         $props = "";
-        
-        $prc = new PropertyRepositoryContract();
-        
-        
-        
         
         foreach($item->itemPropertyList as $property)
         {
