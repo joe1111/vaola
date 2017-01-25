@@ -786,6 +786,15 @@ class vaolaHelper
         }
         return '';
     }
+    
+    public function getProperties(Record $item, KeyValue $settings)
+    {
+        
+        return $item->itemPropertyList;
+        
+        
+    }
+    
 	/**
 	 * Get item characters that match referrer from settings and a given component id.
 	 * @param  Record   $item
