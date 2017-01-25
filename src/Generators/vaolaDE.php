@@ -502,7 +502,6 @@ class vaolaDE extends CSVGenerator
             $size = "";
             $sizetype = "";
             
-            
             for($i = 0; $i < count($aattributenames); $i++){                
                 if($aattributenames[$i] == "Farbe"){
                     $primarycolor = $aattributes[$i];
@@ -518,9 +517,9 @@ class vaolaDE extends CSVGenerator
             }
             
             if($primarycolor == ""){
-                $primarycolor = $this->vaolaHelper->getItemCharacterByBackendName($item, $settings, "schwarz");
-            }
-            
+                $primarycolor = "primarycolor not set";
+                $this->vaolaHelper->getItemCharacterByBackendName($item, $settings, "Farbe");
+            }           
             
             
         $stockList = $this->getStockList($item);
