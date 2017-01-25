@@ -793,7 +793,7 @@ class vaolaHelper
         
         foreach($item->itemPropertyList as $property)
         {
-            $props = $props . $propertyName . " : " . $property->propertyValue . " / ";
+            $props = $props . $property->propertyId . " : " . $property->propertyValue . " / ";
         }
         
         return $props;
