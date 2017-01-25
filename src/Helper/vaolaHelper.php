@@ -804,7 +804,7 @@ class vaolaHelper
         foreach($item->itemPropertyList as $property)
         {
             //$props = $props . $this->propertyNameRepository->findOne($property->propertyId, $settings->get('lang')? $settings->get('lang') : 'de') . " / ";
-            $prop = $prc->findById($property->propertyId);
+            $prop = $this->propertyRepositoryContract->findById($property->propertyId);
             $props = json_encode($prop) . "/";
             
         }
