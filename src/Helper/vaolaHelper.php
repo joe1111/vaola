@@ -787,9 +787,17 @@ class vaolaHelper
         return '';
     }
     
-    public function getProperties(Record $item, KeyValue $settings)
+    public function getProperties(Record $item, KeyValue $settings, float $marketId)
     {
         $props = "";
+        
+        $marketProperties = $this->marketPropertyHelperRepository->getMarketProperty($marketId);
+        
+        foreach($marketProperties as $marketProperty)
+        {
+            $props = $props . $marketProperty['external_component'] . " / ";
+        
+        }
         
         foreach($item->itemPropertyList as $property)
         {
