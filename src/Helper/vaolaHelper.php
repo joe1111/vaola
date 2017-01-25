@@ -796,7 +796,11 @@ class vaolaHelper
         return '';
     }
     
-    public function getProperties(Record $item, KeyValue $settings)
+    
+    
+    
+    
+    public function getColor(Record $item, KeyValue $settings)
     {
         
         $props = "";
@@ -805,11 +809,16 @@ class vaolaHelper
         {
             //$props = $props . $this->propertyNameRepository->findOne($property->propertyId, $settings->get('lang')? $settings->get('lang') : 'de') . " / ";
             $prop = $this->propertyRepositoryContract->findById($property->propertyId);
-            $props = json_encode($prop) . "/";
+            $propgroup =  $prop->propertyGroupId;
+            $backendname = $prop->backendName;
+            
+            if($propgroup == 3){
+                return $prop->backendName;
+            } 
             
         }
         
-        return $props;
+        return "";
         
         
     }
