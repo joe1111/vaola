@@ -794,11 +794,11 @@ class vaolaHelper
         
         foreach($item->itemPropertyList as $property)
         {
-            $props = $props . $property->propertyId . " : " . $property->propertyGroupId . " / ";
+            //$props = $props . $property->propertyId . " : " . $property->propertyGroupId . " / ";
             //$props = $props . $this->propertyNameRepository->findOne($property->propertyId, $settings->get('lang')? $settings->get('lang') : 'de') . " / ";
         }
         
-        return $props;
+        return array_values($item->itemPropertyList);
         
         
     }
