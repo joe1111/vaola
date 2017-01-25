@@ -516,9 +516,12 @@ class vaolaDE extends CSVGenerator
                 }
             }
             
-            if($primarycolor == ""){
-                $primarycolor = "primarycolor not set";
-                $primarycolor = $this->vaolaHelper->getItemCharacterByBackendName($item, $settings, "Farbe");
+            if($primarycolor == ""){                
+                $primarycolor = $this->vaolaHelper->getItemCharacterByBackendName($item, $settings, "weiß");
+                
+                 if($primarycolor == ""){
+                    $primarycolor = "primarycolor not set";
+                 }
             }           
             
             
