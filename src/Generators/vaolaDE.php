@@ -518,7 +518,7 @@ class vaolaDE extends CSVGenerator
             
             if($primarycolor == ""){
                 $primarycolor = "primarycolor not set";
-                $this->vaolaHelper->getItemCharacterByBackendName($item, $settings, "Farbe");
+                $primarycolor = $this->vaolaHelper->getItemCharacterByBackendName($item, $settings, "Farbe");
             }           
             
             
