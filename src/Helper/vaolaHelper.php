@@ -63,7 +63,7 @@ class vaolaHelper
      * PropertyItemNameRepositoryContract $propertyItemNameRepository
      */
     private $propertyNameRepository;
-    /**
+        /**
      * CategoryBranchMarketplaceRepositoryContract $categoryBranchMarketplaceRepository
      */
     private $categoryBranchMarketplaceRepository;
@@ -131,7 +131,7 @@ class vaolaHelper
      */
     public function __construct(CategoryBranchRepositoryContract $categoryBranchRepository,
                                 UnitNameRepositoryContract $unitNameRepository,
-                                PropertyNameRepositoryContract $propertyNameRepository,
+                                PropertyNameRepositoryContract $propertyNameRepository,                                
                                 CategoryBranchMarketplaceRepositoryContract $categoryBranchMarketplaceRepository,
                                 UrlBuilderRepositoryContract $urlBuilderRepository,
                                 CategoryRepositoryContract $categoryRepository,
@@ -148,7 +148,7 @@ class vaolaHelper
     {
         $this->categoryBranchRepository = $categoryBranchRepository;
 		$this->unitNameRepository = $unitNameRepository;
-		$this->propertyNameRepository = $propertyNameRepository;
+		$this->propertyNameRepository = $propertyNameRepository;                
         $this->categoryBranchMarketplaceRepository = $categoryBranchMarketplaceRepository;
         $this->urlBuilderRepository = $urlBuilderRepository;
         $this->categoryRepository = $categoryRepository;
@@ -791,11 +791,10 @@ class vaolaHelper
     {
         
         $props = "";
-         
         
         foreach($item->itemPropertyList as $property)
         {
-            $props = $props . $property->propertyId . " : " . $property->propertyValueType . " / ";
+            $props = $props . $property->propertyId . " : " . $property->propertyGroupId . " / ";
             //$props = $props . $this->propertyNameRepository->findOne($property->propertyId, $settings->get('lang')? $settings->get('lang') : 'de') . " / ";
         }
         
