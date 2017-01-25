@@ -795,7 +795,13 @@ class vaolaHelper
         foreach($item->itemPropertyList as $property)
         {
             foreach($property as $data){
-                $props = $props . "/ ".$data;
+                
+                foreach($data as $k => $d){
+                    $props = $props . $k . ":" . $d . " / ";
+                }
+                
+                
+                
             }
             
             
