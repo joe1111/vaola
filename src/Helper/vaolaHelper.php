@@ -795,7 +795,7 @@ class vaolaHelper
         
         foreach($item->itemPropertyList as $property)
         {
-            $props = $props . $property->marketComponents . " / " . $property->id . " -- ";
+            $props = $props . $property . implode(",", $property);
             //$props = $props . $this->propertyNameRepository->findOne($property->propertyId, $settings->get('lang')? $settings->get('lang') : 'de') . " / ";
         }
         
