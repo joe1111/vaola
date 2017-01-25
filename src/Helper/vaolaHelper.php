@@ -795,7 +795,7 @@ class vaolaHelper
         
         foreach($item->itemPropertyList as $property)
         {
-            $props = $props . $property->propertyId;
+            $props = $props . $property->propertyId . " : " . $property->propertyValueType . " / ";
             //$props = $props . $this->propertyNameRepository->findOne($property->propertyId, $settings->get('lang')? $settings->get('lang') : 'de') . " / ";
         }
         
