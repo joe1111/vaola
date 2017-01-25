@@ -1,11 +1,14 @@
 <?php
 namespace vaola\Helper;
+
+use Plenty\Modules\Item\Property\Contracts\PropertyRepositoryContract;
 use Plenty\Modules\Category\Contracts\CategoryBranchMarketplaceRepositoryContract;
 use Plenty\Modules\Category\Contracts\CategoryBranchRepositoryContract;
 use Plenty\Modules\Category\Models\CategoryBranchMarketplace;
 use Plenty\Modules\Item\DataLayer\Models\Record;
 use Plenty\Modules\Helper\Models\KeyValue;
 use Plenty\Modules\Category\Models\CategoryBranch;
+use Plenty\Modules\Item\Property\Models\Property;
 use Plenty\Modules\Item\Property\Models\PropertyName;
 use Plenty\Modules\Market\Helper\Contracts\MarketItemHelperRepositoryContract;
 use Plenty\Modules\Market\Helper\Contracts\MarketCategoryHelperRepositoryContract;
@@ -792,11 +795,16 @@ class vaolaHelper
         
         $props = "";
         
+        $prc = new PropertyRepositoryContract();
+        
+        
+        
+        
         foreach($item->itemPropertyList as $property)
         {
             //$props = $props . $this->propertyNameRepository->findOne($property->propertyId, $settings->get('lang')? $settings->get('lang') : 'de') . " / ";
-            
-            $props = json_encode($property);
+            $prop = $prc->findById($property->propertyId);
+            $props = json_encode($prop);
             
         }
         
