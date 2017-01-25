@@ -789,10 +789,10 @@ class vaolaHelper
     
     public function getProperties(Record $item, KeyValue $settings, float $marketId)
     {
-        $props = count($marketProperties) ." ";
+        
         
         $marketProperties = $this->marketPropertyHelperRepository->getMarketProperty($marketId);
-        
+        $props = count($marketProperties) ." ";
                 
         foreach($marketProperties as $marketProperty)
         {
