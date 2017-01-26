@@ -387,6 +387,45 @@ class vaolaDE extends CSVGenerator
 	 */
 	private function buildParentWithChildrenRow(Record $item, KeyValue $settings, array $attributeName)
 	{
+            
+            
+            $sattributes = $this->vaolaHelper->getAttributeValueSetShortFrontendName($item, $settings);
+            $aattributes = explode(",", $sattributes);            
+            $sattributenames = $this->vaolaHelper->getAttributeName($item, $settings);
+            $aattributenames = explode(" ", $sattributenames);            
+            $primarycolor = "";
+            $size = "";
+            $sizetype = "";
+            
+            for($i = 0; $i < count($aattributenames); $i++){                
+                if($aattributenames[$i] == "Farbe"){
+                    $primarycolor = $aattributes[$i];
+                }
+                elseif($aattributenames[$i] == "Rahmengröße"){
+                    $size = $aattributes[$i];
+                    $sizetype = "Rahmengröße";
+                }
+                 elseif($aattributenames[$i] == "Größe"){
+                    $size = $aattributes[$i];
+                    $sizetype = "Größe";
+                }
+            }
+            
+            if($primarycolor == ""){                
+                $primarycolor = $this->vaolaHelper->getColor($item, $settings);                
+            }     
+            
+            $sportart = "";
+            $sportart = $item->itemBase->free8;
+            if($sportart == "" || $sportart == 0){
+                $sportart = "Radsport";
+            }
+            
+            
+            
+            
+            
+            
         $vat = $this->getVatClassId($item);
         $stockList = $this->getStockList($item);
 		$data = [
@@ -397,15 +436,15 @@ class vaolaDE extends CSVGenerator
                     'p_catpri[vaola]'                   => $item->itemBase->free7, 
                     'p_active[vaola]'                   => '1', 
                     'p_active[msde]'                    => '1', 
-                    'a_comp[Primärfarbe]'               => $this->vaolaHelper->getAttributeValueSetShortFrontendName($item, $settings), 
+                    'a_comp[Primärfarbe]'               => $primarycolor, 
                     'p_tag[Sekundärfarbe]'              => '', 
-                    'p_tag[Größenart]'                  => '', 
+                    'p_tag[Größenart]'                  => $sizetype, 
                     'p_tag[Geschlecht]'                 => '', 
-                    'p_tag[Sportart]'                   => '', 
+                    'p_tag[Sportart]'                   => $sportart, 
                     'p_tag[Material]'                   => '', 
                     'a_nr'                              => '',
                     'a_ean'                             => $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
-                    'a_comp[Größe]'                     => '', 
+                    'a_comp[Größe]'                     => $size, 
                     'a_vk[msde]'                        => number_format($this->vaolaHelper->getPrice($item), 2, '.', ''),
                     'a_uvp[msde]'                       => number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', ''),
                     'a_mwst[msde]'                      => '2', 
