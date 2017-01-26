@@ -122,7 +122,7 @@ class vaolaDE extends ResultFields
 			],
             'variationRetailPrice' => [
 				'params' => [
-					'referrerId' => $settings->get('referrerId') ? $settings->get('referrerId') : 10,
+					'referrerId' => 10, //$settings->get('referrerId') ? $settings->get('referrerId') : 10,
 				],
 				'fields' => [
 					'price',
