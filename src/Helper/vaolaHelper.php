@@ -486,6 +486,13 @@ class vaolaHelper
     {
             return $item->variationRetailPrice->price;
     }
+    
+    public function getPriceList(Record $item)
+    {
+            return $item->variationRetailPriceList;
+    }
+    
+    
     /**
      * returns the recommendedRetailPrice of the given variation if transferRrp is set
      * @param Record $item

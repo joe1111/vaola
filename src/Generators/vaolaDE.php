@@ -525,6 +525,16 @@ class vaolaDE extends CSVGenerator
             
         $stockList = $this->getStockList($item);
         $priceList = $this->getPriceList($item, $settings);
+        
+        $list = $this->vaolaHelper->getPriceList();
+        foreach($list as $l){
+            $price = $price . $l;
+        }
+        
+        
+        
+        
+        
         $basePriceComponentList = $this->getBasePriceComponentList($item);
 		$data = [                    
                     'ID'				=> $item->itemBase->id,
@@ -543,7 +553,7 @@ class vaolaDE extends CSVGenerator
                     'a_nr'                              => $item->variationBase->id,
                     'a_ean'                             => $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
                     'a_comp[Größe]'                     => $size, 
-                    'a_vk[msde]'                        => number_format($this->vaolaHelper->getPrice($item), 2, '.', ''),
+                    'a_vk[msde]'                        => $price,     //number_format($this->vaolaHelper->getPrice($item), 2, '.', ''),
                     'a_uvp[msde]'                       => number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', ''),
                     'a_mwst[msde]'                      => '2', 
                     'a_media[image]{0}'                 => $this->getImageByNumber($item, $settings, 0),
