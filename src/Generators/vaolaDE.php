@@ -525,9 +525,6 @@ class vaolaDE extends CSVGenerator
             
         $stockList = $this->getStockList($item);
         
-        
-        $price = json_encode($item);
-        
 		$data = [                    
                     'ID'				=> $item->itemBase->id,
                     'Produktname'			=> $this->vaolaHelper->getName($item, $settings, 150),
@@ -540,8 +537,8 @@ class vaolaDE extends CSVGenerator
                     'p_tag[Sekundärfarbe]'              => '', 
                     'p_tag[Größenart]'                  => $sizetype, 
                     'p_tag[Geschlecht]'                 => '', 
-                    'p_tag[Sportart]'                   => '', 
-                    'p_tag[Material]'                   => $price, 
+                    'p_tag[Sportart]'                   => $item->itemBase->urlContent, 
+                    'p_tag[Material]'                   => '', 
                     'a_nr'                              => $item->variationBase->id,
                     'a_ean'                             => $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
                     'a_comp[Größe]'                     => $size, 
