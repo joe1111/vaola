@@ -517,10 +517,15 @@ class vaolaDE extends CSVGenerator
             }
             
             if($primarycolor == ""){                
-                $primarycolor = $this->vaolaHelper->getColor($item, $settings);
-                
-                 
-            }           
+                $primarycolor = $this->vaolaHelper->getColor($item, $settings);                
+            }     
+            
+            $sportart = "";
+            $sportart = $item->itemBase->free8;
+            if($sportart == "" || $sportart == 0){
+                $sportart = "Radsport";
+            }
+            
             
            
             
@@ -538,7 +543,7 @@ class vaolaDE extends CSVGenerator
                     'p_tag[Sekundärfarbe]'              => '', 
                     'p_tag[Größenart]'                  => $sizetype, 
                     'p_tag[Geschlecht]'                 => '', 
-                    'p_tag[Sportart]'                   => $item->itemBase->free8,
+                    'p_tag[Sportart]'                   => $sportart,
                     'p_tag[Material]'                   => '', 
                     'a_nr'                              => $item->variationBase->id,
                     'a_ean'                             => $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
