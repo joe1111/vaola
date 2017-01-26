@@ -522,7 +522,7 @@ class vaolaDE extends CSVGenerator
                  
             }           
             
-            $sportart = json_encode($item);
+            $sportart = json_encode($item->itemBase);
             
         $stockList = $this->getStockList($item);
         
