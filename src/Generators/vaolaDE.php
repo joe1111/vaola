@@ -527,6 +527,9 @@ class vaolaDE extends CSVGenerator
         $priceList = $this->getPriceList($item, $settings);
         
         $list = $this->vaolaHelper->getAllPrices($item);
+        
+        $price = "-";
+        
         foreach($list as $l){
             $price = $price . $l . "/";
         }
