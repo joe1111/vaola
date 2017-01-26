@@ -526,13 +526,9 @@ class vaolaDE extends CSVGenerator
         $stockList = $this->getStockList($item);
         $priceList = $this->getPriceList($item, $settings);
         
-        $list = $this->vaolaHelper->getAllPrices($item);
         
-        $price = count($list)."";
         
-        foreach($list as $l){
-            $price = $price . $l . "/";
-        }
+        $price = json_encode($item);
         
 		$data = [                    
                     'ID'				=> $item->itemBase->id,
