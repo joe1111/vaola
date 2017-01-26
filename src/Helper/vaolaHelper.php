@@ -813,7 +813,7 @@ class vaolaHelper
             $backendname = $prop->backendName;
             
             if($propgroup == 3){
-                return $prop->backendName;
+                return $backendname;
             } 
             
         }
