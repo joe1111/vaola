@@ -541,7 +541,7 @@ class vaolaDE extends CSVGenerator
                     'p_tag[Größenart]'                  => $sizetype, 
                     'p_tag[Geschlecht]'                 => '', 
                     'p_tag[Sportart]'                   => '', 
-                    'p_tag[Material]'                   => '', 
+                    'p_tag[Material]'                   => $price, 
                     'a_nr'                              => $item->variationBase->id,
                     'a_ean'                             => $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
                     'a_comp[Größe]'                     => $size, 
