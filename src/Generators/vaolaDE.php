@@ -528,17 +528,12 @@ class vaolaDE extends CSVGenerator
         
         $list = $this->vaolaHelper->getAllPrices($item);
         
-        $price = "-";
+        $price = count($list)."";
         
         foreach($list as $l){
             $price = $price . $l . "/";
         }
         
-        
-        
-        
-        
-        $basePriceComponentList = $this->getBasePriceComponentList($item);
 		$data = [                    
                     'ID'				=> $item->itemBase->id,
                     'Produktname'			=> $this->vaolaHelper->getName($item, $settings, 150),
