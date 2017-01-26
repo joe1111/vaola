@@ -304,6 +304,12 @@ class vaolaDE extends CSVGenerator
                 }
             }
             
+            if($size == ""){
+                $sizetype = "Rahmengröße";
+                $size = $this->vaolaHelper->getSize($item, $settings);                   
+            }
+            
+            
             if($primarycolor == ""){                
                 $primarycolor = $this->vaolaHelper->getColor($item, $settings);                
             }     
@@ -592,6 +598,11 @@ class vaolaDE extends CSVGenerator
                     $size = $aattributes[$i];
                     $sizetype = "Größe";
                 }
+            }
+            
+            if($size == ""){
+                $sizetype = "Rahmengröße";
+                $size = $this->vaolaHelper->getSize($item, $settings);                   
             }
             
             if($primarycolor == ""){                

@@ -804,7 +804,27 @@ class vaolaHelper
     }
     
     
-    
+    public function getSize(Record $item, KeyValue $settings)
+    {
+        
+        $props = "";
+        
+        foreach($item->itemPropertyList as $property)
+        {
+            $prop = $this->propertyRepositoryContract->findById($property->propertyId);
+            $propgroup =  $prop->propertyGroupId;
+            $backendname = $prop->backendName;
+            
+            if($propgroup == 4){
+                return $backendname;
+            } 
+            
+        }
+        
+        return "";
+        
+        
+    }
     
     
     public function getColor(Record $item, KeyValue $settings)
