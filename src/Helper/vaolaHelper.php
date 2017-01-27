@@ -830,9 +830,9 @@ class vaolaHelper
     
      public function getGender(Record $item, KeyValue $settings)
     {
-        
-        $props = "";
-        
+        $gender = "";       
+         
+         
         foreach($item->itemPropertyList as $property)
         {
             $prop = $this->propertyRepositoryContract->findById($property->propertyId);
@@ -840,12 +840,14 @@ class vaolaHelper
             $backendname = $prop->backendName;
             
             if($propgroup == 2){
-                return $backendname;
-            } 
+                $gender = $backendname;
+            } else {
+                $gender = "Unisex";
+            }
             
         }
         
-        return "";
+        return $gender;
         
         
     }
