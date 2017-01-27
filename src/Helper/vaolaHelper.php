@@ -841,6 +841,7 @@ class vaolaHelper
             
             if($propgroup == 2){
                 $gender = $backendname;
+                return $gender;
             } else {
                 $gender = "Unisex";
             }
