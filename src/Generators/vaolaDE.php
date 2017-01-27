@@ -321,6 +321,9 @@ class vaolaDE extends CSVGenerator
             }
             
             
+                
+                            
+            
             
             
             
@@ -340,7 +343,7 @@ class vaolaDE extends CSVGenerator
                     'a_comp[Primärfarbe]'               => $primarycolor, 
                     'p_tag[Sekundärfarbe]'              => '', 
                     'p_tag[Größenart]'                  => $sizetype, 
-                    'p_tag[Geschlecht]'                 => '', 
+                    'p_tag[Geschlecht]'                 => $this->vaolaHelper->getGender($item, $settings), 
                     'p_tag[Sportart]'                   => $sportart, 
                     'p_tag[Material]'                   => '', 
                     'a_nr'                              => $item->variationBase->id,
@@ -484,7 +487,7 @@ class vaolaDE extends CSVGenerator
                     'a_comp[Primärfarbe]'               => $primarycolor, 
                     'p_tag[Sekundärfarbe]'              => '', 
                     'p_tag[Größenart]'                  => $sizetype, 
-                    'p_tag[Geschlecht]'                 => '', 
+                    'p_tag[Geschlecht]'                 => $this->vaolaHelper->getGender($item, $settings), 
                     'p_tag[Sportart]'                   => $sportart, 
                     'p_tag[Material]'                   => '', 
                     'a_nr'                              => '',
@@ -631,7 +634,7 @@ class vaolaDE extends CSVGenerator
                     'a_comp[Primärfarbe]'               => $primarycolor, 
                     'p_tag[Sekundärfarbe]'              => '', 
                     'p_tag[Größenart]'                  => $sizetype, 
-                    'p_tag[Geschlecht]'                 => '', 
+                    'p_tag[Geschlecht]'                 => $this->vaolaHelper->getGender($item, $settings), 
                     'p_tag[Sportart]'                   => $sportart,
                     'p_tag[Material]'                   => '', 
                     'a_nr'                              => $item->variationBase->id,
