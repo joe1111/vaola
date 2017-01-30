@@ -372,7 +372,7 @@ class vaolaDE extends CSVGenerator
                     'a_active'                          => '1', 
                     'a_stock'                           => $stockList['stock'],
                     'a_delivery'                        => $this->vaolaHelper->getAvailability($item, $settings, false),
-                    'a_shipping_type'                   => 'DHL_STD', 
+                    'a_shipping_type'                   => 'SPED', 
                     
                     
                     
@@ -524,7 +524,7 @@ class vaolaDE extends CSVGenerator
                     'a_active'                          => '1', 
                     'a_stock'                           => $stockList['stock'],
                     'a_delivery'                        => $this->vaolaHelper->getAvailability($item, $settings, false),
-                    'a_shipping_type'                   => 'DHL_STD', 
+                    'a_shipping_type'                   => 'SPED', 
                     
                     
                     
@@ -679,7 +679,7 @@ class vaolaDE extends CSVGenerator
                     'a_active'                          => '1', 
                     'a_stock'                           => $stockList['stock'],
                     'a_delivery'                        => $this->vaolaHelper->getAvailability($item, $settings, false),
-                    'a_shipping_type'                   => 'DHL_STD', 
+                    'a_shipping_type'                   => 'SPED', 
                     
                     
                     
