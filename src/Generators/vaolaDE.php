@@ -321,6 +321,14 @@ class vaolaDE extends CSVGenerator
             }
             
             
+            $vk = number_format($this->vaolaHelper->getPrice($item), 2, '.', '');
+            $uvp = number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', '');
+            if($uvp == "0.00"){
+                $uvp = $vk;
+            }
+            
+            
+            
                 
                             
             
@@ -349,8 +357,8 @@ class vaolaDE extends CSVGenerator
                     'a_nr'                              => $item->variationBase->id,
                     'a_ean'                             => $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
                     'a_comp[Größe]'                     => $size, 
-                    'a_vk[msde]'                        => number_format($this->vaolaHelper->getPrice($item), 2, '.', ''),
-                    'a_uvp[msde]'                       => number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', ''),
+                    'a_vk[msde]'                        => $vk,
+                    'a_uvp[msde]'                       => $uvp,
                     'a_mwst[msde]'                      => '2', 
                     'a_media[image]{0}'                 => $this->getImageByNumber($item, $settings, 0),
                     'a_media[image]{1}'                 => $this->getImageByNumber($item, $settings, 1),
@@ -470,6 +478,12 @@ class vaolaDE extends CSVGenerator
             }
             
             
+            $vk = number_format($this->vaolaHelper->getPrice($item), 2, '.', '');
+            $uvp = number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', '');
+            if($uvp == "0.00"){
+                $uvp = $vk;
+            }
+            
             
             
             
@@ -493,8 +507,8 @@ class vaolaDE extends CSVGenerator
                     'a_nr'                              => '',
                     'a_ean'                             => $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
                     'a_comp[Größe]'                     => $size, 
-                    'a_vk[msde]'                        => number_format($this->vaolaHelper->getPrice($item), 2, '.', ''),
-                    'a_uvp[msde]'                       => number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', ''),
+                    'a_vk[msde]'                        => $vk,
+                    'a_uvp[msde]'                       => $uvp,
                     'a_mwst[msde]'                      => '2', 
                     'a_media[image]{0}'                 => $this->getImageByNumber($item, $settings, 0),
                     'a_media[image]{1}'                 => $this->getImageByNumber($item, $settings, 1),
@@ -618,6 +632,12 @@ class vaolaDE extends CSVGenerator
                 $sportart = "Radsport";
             }
             
+             $vk = number_format($this->vaolaHelper->getPrice($item), 2, '.', '');
+            $uvp = number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', '');
+            if($uvp == "0.00"){
+                $uvp = $vk;
+            }
+            
             
            
             
@@ -640,8 +660,8 @@ class vaolaDE extends CSVGenerator
                     'a_nr'                              => $item->variationBase->id,
                     'a_ean'                             => $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
                     'a_comp[Größe]'                     => $size, 
-                    'a_vk[msde]'                        => number_format($this->vaolaHelper->getPrice($item), 2, '.', ''),
-                    'a_uvp[msde]'                       => number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', ''),
+                    'a_vk[msde]'                        => $vk,
+                    'a_uvp[msde]'                       => $uvp,
                     'a_mwst[msde]'                      => '2', 
                     'a_media[image]{0}'                 => $this->getImageByNumber($item, $settings, 0),
                     'a_media[image]{1}'                 => $this->getImageByNumber($item, $settings, 1),
