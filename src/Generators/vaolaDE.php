@@ -297,10 +297,12 @@ class vaolaDE extends CSVGenerator
                 elseif($aattributenames[$i] == "Rahmengröße"){
                     $size = $aattributes[$i];
                     $sizetype = "Rahmengröße";
+                    
                 }
                  elseif($aattributenames[$i] == "Größe"){
                     $size = $aattributes[$i];
                     $sizetype = "Größe";
+                    
                 }
             }
             
@@ -327,7 +329,9 @@ class vaolaDE extends CSVGenerator
                 $uvp = $vk;
             }
             
-            
+            if($size == ""){
+                $size = "Unisize";
+            }
             
                 
                             
@@ -459,11 +463,11 @@ class vaolaDE extends CSVGenerator
                 }
                 elseif($aattributenames[$i] == "Rahmengröße"){
                     $size = $aattributes[$i];
-                    $sizetype = "Rahmengröße";
+                    $sizetype = "Rahmengröße";                    
                 }
                  elseif($aattributenames[$i] == "Größe"){
                     $size = $aattributes[$i];
-                    $sizetype = "Größe";
+                    $sizetype = "Größe";                    
                 }
             }
             
@@ -484,7 +488,9 @@ class vaolaDE extends CSVGenerator
                 $uvp = $vk;
             }
             
-            
+            if($size == ""){
+                $size = "Unisize";
+            }
             
             
             
@@ -609,11 +615,11 @@ class vaolaDE extends CSVGenerator
                 }
                 elseif($aattributenames[$i] == "Rahmengröße"){
                     $size = $aattributes[$i];
-                    $sizetype = "Rahmengröße";
+                    $sizetype = "Rahmengröße";                    
                 }
                  elseif($aattributenames[$i] == "Größe"){
                     $size = $aattributes[$i];
-                    $sizetype = "Größe";
+                    $sizetype = "Größe";                    
                 }
             }
             
@@ -638,7 +644,9 @@ class vaolaDE extends CSVGenerator
                 $uvp = $vk;
             }
             
-            
+            if($size == ""){
+                $size = "Unisize";
+            }
            
             
         $stockList = $this->getStockList($item);
