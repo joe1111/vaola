@@ -1,6 +1,7 @@
 <?php
 namespace vaola\Helper;
 
+use Plenty\Modules\Item\Variation\Models\Variation;
 use Plenty\Modules\Item\Property\Contracts\PropertyRepositoryContract;
 use Plenty\Modules\Category\Contracts\CategoryBranchMarketplaceRepositoryContract;
 use Plenty\Modules\Category\Contracts\CategoryBranchRepositoryContract;
@@ -870,6 +871,17 @@ class vaolaHelper
         
         
     }
+    
+    
+    public function getVariationNumber(Record $item ){
+        
+        $variation = Variation();
+        return $variation->number;
+        
+    }
+    
+    
+    
     
 	/**
 	 * Get item characters that match referrer from settings and a given component id.
