@@ -879,7 +879,10 @@ class vaolaHelper
         
         $vrc = VariationRepositoryContract();
         $variation = $vrc->findById($item->variationBase->id);
-        return $variation->number;
+        $ret = json_encode($vrc . " -- " .$variation );
+        
+        
+        return $ret;
         
     }
     
