@@ -877,7 +877,7 @@ class vaolaHelper
     public function getVariationNumber(Record $item ){
         
         
-        $vrc = VariationRepositoryContract();
+        $vrc = new VariationRepositoryContract();
         $variation = $vrc->findById($item->variationBase->id);
         $ret = json_encode($vrc . " -- " .$variation );
         
