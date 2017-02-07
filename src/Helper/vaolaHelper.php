@@ -2,6 +2,7 @@
 namespace vaola\Helper;
 
 use Plenty\Modules\Item\Variation\Models\Variation;
+use Plenty\Modules\Item\Variation\Contracts\VariationRepositoryContract;
 use Plenty\Modules\Item\Property\Contracts\PropertyRepositoryContract;
 use Plenty\Modules\Category\Contracts\CategoryBranchMarketplaceRepositoryContract;
 use Plenty\Modules\Category\Contracts\CategoryBranchRepositoryContract;
@@ -875,7 +876,9 @@ class vaolaHelper
     
     public function getVariationNumber(Record $item ){
         
-        $variation = Variation();
+        
+        $vrc = VariationRepositoryContract();
+        $variation = $vrc->findById($item->variationBase->id);
         return $variation->number;
         
     }
