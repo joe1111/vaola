@@ -882,7 +882,7 @@ class vaolaHelper
         $ret = json_encode($vrc . " -- " .$variation );
         
         
-        return $ret;
+        return "!!" . $ret;
         
     }
     
