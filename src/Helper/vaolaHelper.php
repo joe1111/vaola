@@ -877,12 +877,9 @@ class vaolaHelper
     }
     
     
-    public function getVariationNumber(Record $item ){
+    public function getVariationNumber(Record $item ){        
         
-        
-        
-        $variation = $this->variationRepositoryContract->findById($item->variationBase->id);
-       
+        $variation = $this->variationRepositoryContract->findById($item->variationBase->id);       
         return $variation->number;
         
     }
