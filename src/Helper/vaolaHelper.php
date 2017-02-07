@@ -59,6 +59,7 @@ class vaolaHelper
     
     private $propertyRepositoryContract;
     
+    private $variationRepositoryContract;
     
     /**
      * CategoryBranchRepositoryContract $categoryBranchRepository
@@ -138,7 +139,8 @@ class vaolaHelper
 	 * @param MarketPropertyHelperRepositoryContract $marketPropertyHelperRepository
 	 * @param MarketAttributeHelperRepositoryContract $marketAttributeHelperRepository
      */
-    public function __construct(PropertyRepositoryContract $propertyRepositoryContract,
+    public function __construct(VariationRepositoryContract $variationRepositoryContract,
+            PropertyRepositoryContract $propertyRepositoryContract,
                                 CategoryBranchRepositoryContract $categoryBranchRepository,
                                 UnitNameRepositoryContract $unitNameRepository,
                                 PropertyNameRepositoryContract $propertyNameRepository,                                
@@ -156,6 +158,7 @@ class vaolaHelper
 								MarketAttributeHelperRepositoryContract $marketAttributeHelperRepository
     )
     {
+        $this->variationRepositoryContract = $variationRepositoryContract;
         $this->propertyRepositoryContract = $propertyRepositoryContract;
         $this->categoryBranchRepository = $categoryBranchRepository;
 		$this->unitNameRepository = $unitNameRepository;
@@ -877,8 +880,8 @@ class vaolaHelper
     public function getVariationNumber(Record $item ){
         
         
-        $vrc = new VariationRepositoryContract();
-        $variation = $vrc->findById($item->variationBase->id);
+        
+        $variation = $this->variationRepositoryContract->findById($item->variationBase->id);
         $ret = json_encode($vrc . " -- " .$variation );
         
         
