@@ -812,7 +812,7 @@ class vaolaHelper
     public function getSize(Record $item, KeyValue $settings)
     {
         
-        $props = "";
+        /*$props = "";
         
         foreach($item->itemPropertyList as $property)
         {
@@ -824,7 +824,7 @@ class vaolaHelper
                 return $backendname;
             } 
             
-        }
+        }*/
         
         return "";
         
@@ -836,7 +836,7 @@ class vaolaHelper
      public function getGender(Record $item, KeyValue $settings)
     {
        
-        foreach($item->itemPropertyList as $property)
+        /*foreach($item->itemPropertyList as $property)
         {
             $prop = $this->propertyRepositoryContract->findById($property->propertyId);
             $propgroup =  $prop->propertyGroupId;
@@ -845,7 +845,7 @@ class vaolaHelper
             if($propgroup == 2){                
                 return $backendname;
             } 
-        }
+        }*/
         
         return "Unisex";
         
@@ -856,7 +856,7 @@ class vaolaHelper
     public function getColor(Record $item, KeyValue $settings)
     {
         
-        $props = "";
+       /* $props = "";
         
         foreach($item->itemPropertyList as $property)
         {
@@ -869,7 +869,7 @@ class vaolaHelper
                 return $backendname;
             } 
             
-        }
+        }*/
         
         return "";
         
