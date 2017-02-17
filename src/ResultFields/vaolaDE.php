@@ -94,7 +94,7 @@ class vaolaDE extends ResultFields
 				'params' => [
 					'type' => 'all',
 				],
-				'referenceMarketplace' => $settings->get('referrerId') ? $settings->get('referrerId') : 102,
+				'referenceMarketplace' => $settings->get('referrerId') ? $settings->get('referrerId') : 10,
 				'fields' => [
 					'type',
 					'path',
@@ -114,7 +114,7 @@ class vaolaDE extends ResultFields
 			],
 			'variationRecommendedRetailPrice' => [
 				'params' => [
-					'referrerId' => $settings->get('referrerId') ? $settings->get('referrerId') : 102,
+					'referrerId' => $settings->get('referrerId') ? $settings->get('referrerId') : 10,
 				],
 				'fields' => [
 					'price',
@@ -122,7 +122,7 @@ class vaolaDE extends ResultFields
 			],
             'variationRetailPrice' => [
 				'params' => [
-					'referrerId' => $settings->get('referrerId') ? $settings->get('referrerId') : 102,
+					'referrerId' => $settings->get('referrerId') ? $settings->get('referrerId') : 10,
 				],
 				'fields' => [
 					'price',
@@ -130,7 +130,7 @@ class vaolaDE extends ResultFields
             ],
 			'variationSpecialOfferRetailPrice' => [
 				'params' => [
-					'referrerId' => $settings->get('referrerId') ? $settings->get('referrerId') : 102,
+					'referrerId' => $settings->get('referrerId') ? $settings->get('referrerId') : 10,
 				],
 				'fields' => [
 					'retailPrice',
@@ -155,7 +155,7 @@ class vaolaDE extends ResultFields
 			],
 			'variationMarketStatus' => [
 				'params' => [
-					'marketId' => 102
+					'marketId' => 10
 				],
 				'fields' => [
 					'sku'
