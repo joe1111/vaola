@@ -581,15 +581,15 @@ class vaolaDE extends CSVGenerator
 	 */
 	private function getImageByNumber(Record $item, KeyValue $settings, int $number):string
 	{
-		$imageList = $this->vaolaHelper->getImageList($item, $settings);
-		if(count($imageList) > 0 && array_key_exists($number, $imageList))
+            json_encode($imageList = $this->vaolaHelper->getImageList($item, $settings));
+		/*if(count($imageList) > 0 && array_key_exists($number, $imageList))
 		{
 			return (string)$imageList[$number];
 		}
 		else
 		{
 			return '';
-		}
+		}*/
 	}
 	/**
 	 * Returns the unit, if there is any unit configured, which is allowed

@@ -778,7 +778,6 @@ class vaolaHelper
             foreach($availabilitylist as $availability){
                 if($availability->value == "10.00"){
                        $list[] = $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
-        
                 }
             }
             
