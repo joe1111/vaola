@@ -766,27 +766,27 @@ class vaolaHelper
      * @param string $imageType = 'normal'
      * @return array
      */
-    public function getImageList(Record $item, KeyValue $settings, string $imageType = 'normal')
+    public function getImageList(Record $item, KeyValue $settings, string $imageType = 'normal'):array
     {
         
          
         
-       // $list = [];
+        $list = [];
         foreach($item->variationImageList as $image)
         {
             $availabilitylist = $this->itemImageAvailabilityRepositoryContract->findByImageId($image->imageId);
             foreach($availabilitylist as $availability){
                 if($availability->value == "10.00"){
-                    return json_encode($availability);
+                       $list[] = $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
+        
                 }
             }
             
             
             
-         //   $list[] = $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
         }
-        return "";
-        //return $list;
+        
+        return $list;
     }
 	/**
 	 * Get item characters that match referrer from settings and a given component id.
