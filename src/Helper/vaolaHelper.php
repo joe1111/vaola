@@ -1,6 +1,7 @@
 <?php
 namespace vaola\Helper;
 
+use Plenty\Modules\Item\ItemImage\Contracts\ItemImageAvailabilityRepositoryContract;
 use Plenty\Modules\Item\Variation\Models\Variation;
 use Plenty\Modules\Item\Variation\Contracts\VariationRepositoryContract;
 use Plenty\Modules\Item\Property\Contracts\PropertyRepositoryContract;
@@ -758,16 +759,18 @@ class vaolaHelper
      * @param string $imageType = 'normal'
      * @return array
      */
-    public function getImageList(Record $item, KeyValue $settings, string $imageType = 'normal')
+    public function getImageList(Record $item, KeyValue $settings, string $imageType = 'normal'):array
     {
+        
+         $imgavl = new ItemImageAvailabilityRepositoryContract(); 
+        
+        
+        
         
         $list = [];
         foreach($item->variationImageList as $image)
         {
-            return json_encode($image);
-            
-            
-            
+            $imgavl->findByImageId($image->imageId);
             
             $list[] = $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
         }
