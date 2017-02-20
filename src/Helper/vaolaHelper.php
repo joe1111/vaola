@@ -202,19 +202,6 @@ class vaolaHelper
 		}
                 
                 $name = $this->cleanName($name, (int)$settings->get('nameMaxLength') ? (int)$settings->get('nameMaxLength') : (int)$defaultNameLength);
-                $name = str_replace ( '10"' , "10 Zoll" , $name);
-                $name = str_replace ( '12"' , "12 Zoll" , $name);
-                $name = str_replace ( '14"' , "14 Zoll" , $name);
-                $name = str_replace ( '16"' , "16 Zoll" , $name);
-                $name = str_replace ( '18"' , "18 Zoll" , $name);
-                $name = str_replace ( '20"' , "20 Zoll" , $name);
-                $name = str_replace ( '22"' , "22 Zoll" , $name);
-                $name = str_replace ( '24"' , "24 Zoll" , $name);                
-                $name = str_replace ( '26"' , "26 Zoll" , $name);                
-                $name = str_replace ( '28"' , "28 Zoll" , $name);
-                $name = str_replace ( '29"' , "29 Zoll" , $name);
-                $name = str_replace ( '27.5"' , "27.5 Zoll" , $name);
-                $name = str_replace ( '27,5"' , "27,5 Zoll" , $name);
                 
                 
                 
@@ -839,7 +826,7 @@ class vaolaHelper
             $backendname = $prop->backendName;
             
             if($propgroup == 4){
-                return $backendname . " cm";
+                return $backendname . "cm";
             } 
             
         }
