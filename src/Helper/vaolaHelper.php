@@ -58,6 +58,10 @@ class vaolaHelper
     const BARCODE_EAN = 'EAN_13';
     const BARCODE_ISBN = 'ISBN';
     
+    
+    private $itemImageAvailabilityRepositoryContract;
+    
+    
     private $propertyRepositoryContract;
     
     private $variationRepositoryContract;
@@ -140,7 +144,9 @@ class vaolaHelper
 	 * @param MarketPropertyHelperRepositoryContract $marketPropertyHelperRepository
 	 * @param MarketAttributeHelperRepositoryContract $marketAttributeHelperRepository
      */
-    public function __construct(VariationRepositoryContract $variationRepositoryContract,
+    public function __construct(
+            ItemImageAvailabilityRepositoryContract $itemImageAvailabilityRepositoryContract,
+            VariationRepositoryContract $variationRepositoryContract,
             PropertyRepositoryContract $propertyRepositoryContract,
                                 CategoryBranchRepositoryContract $categoryBranchRepository,
                                 UnitNameRepositoryContract $unitNameRepository,
@@ -159,6 +165,7 @@ class vaolaHelper
 								MarketAttributeHelperRepositoryContract $marketAttributeHelperRepository
     )
     {
+        $this->itemImageAvailabilityRepositoryContract = $itemImageAvailabilityRepositoryContract;
         $this->variationRepositoryContract = $variationRepositoryContract;
         $this->propertyRepositoryContract = $propertyRepositoryContract;
         $this->categoryBranchRepository = $categoryBranchRepository;
@@ -762,15 +769,12 @@ class vaolaHelper
     public function getImageList(Record $item, KeyValue $settings, string $imageType = 'normal')
     {
         
-         $imgavl = new ItemImageAvailabilityRepositoryContract(); 
-        
-        
-        
+         
         
         $list = [];
         foreach($item->variationImageList as $image)
         {
-            $imgavl->findByImageId($image->imageId);
+            $itemImageAvailabilityRepositoryContract->findByImageId($image->imageId);
             return json_encode($imgavl);
             
             $list[] = $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
