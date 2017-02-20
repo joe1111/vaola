@@ -168,7 +168,7 @@ class vaolaHelper
 								MarketAttributeHelperRepositoryContract $marketAttributeHelperRepository
     )
     {
-        $this->variationImageRepositoryContract = variationImageRepositoryContract;
+        $this->variationImageRepositoryContract = $variationImageRepositoryContract;
         $this->itemImageAvailabilityRepositoryContract = $itemImageAvailabilityRepositoryContract;
         $this->variationRepositoryContract = $variationRepositoryContract;
         $this->propertyRepositoryContract = $propertyRepositoryContract;
