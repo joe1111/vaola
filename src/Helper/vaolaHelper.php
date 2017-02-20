@@ -780,9 +780,8 @@ class vaolaHelper
                        $list[] = $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
                 }
             }*/
-            $list[] = $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
                 
-            
+            $list[] = $image;
             
         }
         
