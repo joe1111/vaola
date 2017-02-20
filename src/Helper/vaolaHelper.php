@@ -774,13 +774,14 @@ class vaolaHelper
         $list = [];
         foreach($item->variationImageList as $image)
         {
-            $availabilitylist = $this->itemImageAvailabilityRepositoryContract->findByImageId($image->imageId);
+            /*$availabilitylist = $this->itemImageAvailabilityRepositoryContract->findByImageId($image->imageId);
             foreach($availabilitylist as $availability){
                 if($availability->value == "10.00"){
                        $list[] = $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
                 }
-            }
-            
+            }*/
+            $list[] = $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
+                
             
             
         }
