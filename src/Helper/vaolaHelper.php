@@ -787,6 +787,7 @@ class vaolaHelper
               elseif($availability->value == "-1.00" ){
               $list[] = $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
                 }
+                
             }
                 
             
