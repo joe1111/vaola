@@ -779,7 +779,7 @@ class vaolaHelper
             
             $availabilitylist = $this->itemImageAvailabilityRepositoryContract->findByImageId($image->imageId);
             
-             $list[] = $image . json_encode($availabilitylist);
+             $list[] = json_encode($image) . json_encode($availabilitylist);
             
             /*foreach($availabilitylist as $availability){
                 if($availability->value == "10.00"){
