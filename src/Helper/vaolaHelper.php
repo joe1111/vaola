@@ -785,10 +785,10 @@ class vaolaHelper
                     $availabilitylist = $this->itemImageAvailabilityRepositoryContract->findByImageId($image->imageId);            
                     foreach($availabilitylist as $availability){
                         if($availability->type == "marketplace" && $availability->value == "10.00" ){
-                            $list[] = json_encode($linkedvariations) . $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
+                            $list[] = $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
                         } 
                         elseif($availability->type == "marketplace" && $availability->value == "-1.00" ){
-                            $list[] = json_encode($linkedvariations) . $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
+                            $list[] = $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
                         }                
                     }
                     
