@@ -760,9 +760,15 @@ class vaolaHelper
      */
     public function getImageList(Record $item, KeyValue $settings, string $imageType = 'normal'):array
     {
+        
         $list = [];
         foreach($item->variationImageList as $image)
         {
+            return json_encode($image);
+            
+            
+            
+            
             $list[] = $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
         }
         return $list;
@@ -817,7 +823,6 @@ class vaolaHelper
     public function getSize(Record $item, KeyValue $settings)
     {
         
-        $props = "";
         
         foreach($item->itemPropertyList as $property)
         {
@@ -861,7 +866,6 @@ class vaolaHelper
     public function getColor(Record $item, KeyValue $settings)
     {
         
-        $props = "";
         
         foreach($item->itemPropertyList as $property)
         {
