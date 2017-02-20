@@ -771,7 +771,7 @@ class vaolaHelper
         
          
         
-        $list = [];
+       // $list = [];
         foreach($item->variationImageList as $image)
         {
             $availabilitylist = $this->itemImageAvailabilityRepositoryContract->findByImageId($image->imageId);
@@ -783,9 +783,10 @@ class vaolaHelper
             
             
             
-            $list[] = $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
+         //   $list[] = $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
         }
-        return $list;
+        return "";
+        //return $list;
     }
 	/**
 	 * Get item characters that match referrer from settings and a given component id.
