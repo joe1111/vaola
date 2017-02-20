@@ -759,7 +759,7 @@ class vaolaHelper
      * @param string $imageType = 'normal'
      * @return array
      */
-    public function getImageList(Record $item, KeyValue $settings, string $imageType = 'normal'):array
+    public function getImageList(Record $item, KeyValue $settings, string $imageType = 'normal')
     {
         
          $imgavl = new ItemImageAvailabilityRepositoryContract(); 
@@ -771,6 +771,7 @@ class vaolaHelper
         foreach($item->variationImageList as $image)
         {
             $imgavl->findByImageId($image->imageId);
+            return json_encode($imgavl);
             
             $list[] = $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
         }
