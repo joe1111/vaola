@@ -758,7 +758,7 @@ class vaolaHelper
      * @param string $imageType = 'normal'
      * @return array
      */
-    public function getImageList(Record $item, KeyValue $settings, string $imageType = 'normal'):array
+    public function getImageList(Record $item, KeyValue $settings, string $imageType = 'normal')
     {
         
         $list = [];
