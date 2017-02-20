@@ -1,6 +1,7 @@
 <?php
 namespace vaola\Helper;
 
+use Plenty\Modules\Item\VariationImage\Contracts\VariationImageRepositoryContract;
 use Plenty\Modules\Item\ItemImage\Contracts\ItemImageAvailabilityRepositoryContract;
 use Plenty\Modules\Item\Variation\Models\Variation;
 use Plenty\Modules\Item\Variation\Contracts\VariationRepositoryContract;
@@ -61,6 +62,7 @@ class vaolaHelper
     
     private $itemImageAvailabilityRepositoryContract;
     
+    private $variationImageRepositoryContract;
     
     private $propertyRepositoryContract;
     
@@ -145,6 +147,7 @@ class vaolaHelper
 	 * @param MarketAttributeHelperRepositoryContract $marketAttributeHelperRepository
      */
     public function __construct(
+            VariationImageRepositoryContract $variationImageRepositoryContract,
             ItemImageAvailabilityRepositoryContract $itemImageAvailabilityRepositoryContract,
             VariationRepositoryContract $variationRepositoryContract,
             PropertyRepositoryContract $propertyRepositoryContract,
@@ -165,6 +168,7 @@ class vaolaHelper
 								MarketAttributeHelperRepositoryContract $marketAttributeHelperRepository
     )
     {
+        $this->variationImageRepositoryContract = variationImageRepositoryContract;
         $this->itemImageAvailabilityRepositoryContract = $itemImageAvailabilityRepositoryContract;
         $this->variationRepositoryContract = $variationRepositoryContract;
         $this->propertyRepositoryContract = $propertyRepositoryContract;
@@ -769,25 +773,23 @@ class vaolaHelper
     public function getImageList(Record $item, KeyValue $settings, string $imageType = 'normal'):array
     {
         
-         
-        
         $list = [];
         foreach($item->variationImageList as $image)
         {
             
-           
             
-            $availabilitylist = $this->itemImageAvailabilityRepositoryContract->findByImageId($image->imageId);
+            $linkedvariations = $this->variationImageRepositoryContract->findByImageId($image->imageId);
+             
             
             
+            $availabilitylist = $this->itemImageAvailabilityRepositoryContract->findByImageId($image->imageId);            
             foreach($availabilitylist as $availability){
                 if($availability->type == "marketplace" && $availability->value == "10.00" ){
-                       $list[] = $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
-                }
-              elseif($availability->type == "marketplace" && $availability->value == "-1.00" ){
-                $list[] = $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
-                }
-                
+                    $list[] = json_encode($linkedvariations) . $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
+                } 
+                elseif($availability->type == "marketplace" && $availability->value == "-1.00" ){
+                    $list[] = json_encode($linkedvariations) . $this->urlBuilderRepository->getImageUrl($image->path, $settings->get('plentyId'), $imageType, $image->fileType, $image->type == 'external');
+                }                
             }
                 
             
