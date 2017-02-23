@@ -59,26 +59,7 @@ class vaolaDE extends CSVGenerator
 		{
 			$settings = $this->arrayHelper->buildMapFromObjectList($formatSettings, 'key', 'value');
 			$this->setDelimiter(";");
-			
-			//Kategorien
-			
-			/*$this->addCSVContent([
-				'external_id',
-				'external_parent_id',
-				'categoryname',
-				'active',
-				'sort',
-				'level',
-			]);
-			
-			
-			//Kategorien
-			$this->addCSVContent([
-				'',
-			]);*/
-			
-			
-			
+						
 				$this->addCSVContent([
                                     'p_nr',    
                                     'p_name',
@@ -110,66 +91,8 @@ class vaolaDE extends CSVGenerator
                                     'a_active', 
                                     'a_stock', 
                                     'a_delivery', 
-                                    'a_shipping_type', 
-                                    
-                                    /*
-				'Produktname',
-				'Artikelnummer',
-				'ean',
-				'Hersteller',
-				'Steuersatz',
-				'Preis',
-				'Kurzbeschreibung',
-				'Beschreibung',
-				'Versandkosten',
-				'Lagerbestand',
-				'Kategoriestruktur',
-				'Attribute',
-				'Gewicht',
-				'Lieferzeit',
-				'Nachnahmegebühr',
-				'MPN',
-				'Bildlink',
-				'Bildlink2',
-				'Bildlink3',
-				'Bildlink4',
-				'Bildlink5',
-				'Bildlink6',
-				'Zustand',
-				'Familienname1',
-				'Eigenschaft1',
-				'Familienname2',
-				'Eigenschaft2',
-				'ID',
-				'Einheit',
-				'Inhalt',
-				'Freifeld1',
-				'Freifeld2',
-				'Freifeld3',
-				'Freifeld4',
-				'Freifeld5',
-				'Freifeld6',
-				'Freifeld7',
-				'Freifeld8',
-				'Freifeld9',
-				'Freifeld10',
-				'baseid',
-				'basename',
-				'level',
-				'status',
-				'external_categories',
-				'base',
-				'dealer_price',
-				'link'		 ,
-				'ASIN',
-				'Mindestabnahme',
-				'Maximalabnahme',
-				'Abnahmestaffelung',
-				'Energieefiizienz',
-				'Energieefiizienzbild',
-				'UVP',
-				'EVP',
-			*/]);
+                                    'a_shipping_type',                                     
+			]);
 			$currentItemId = null;
 			$previousItemId = null;
 			$variations = array();
