@@ -93,7 +93,8 @@ class vaolaDE extends ResultFields
 				'params' => [
 					'type' => 'all',
 				],
-				'referenceMarketplace' => $settings->get('referrerId') ? $settings->get('referrerId') : 10,
+				//'referenceMarketplace' => $settings->get('referrerId') ? $settings->get('referrerId') : 10,
+                            'referenceMarketplace' => 10,
 				'fields' => [
 					'type',
 					'path',
