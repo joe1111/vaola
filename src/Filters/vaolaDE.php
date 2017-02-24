@@ -30,7 +30,7 @@ class vaolaDE extends Filters
             'variationVisibility.isVisibleForMarketplace' => [
 				'mandatoryOneMarketplace' => [],
 				'mandatoryAllMarketplace' => [
-					10
+					106
 				]
             ]
 		];
