@@ -4,7 +4,6 @@ use Plenty\Modules\DataExchange\Contracts\CSVGenerator;
 use Plenty\Modules\Helper\Services\ArrayHelper;
 use Plenty\Modules\Item\DataLayer\Models\Record;
 use Plenty\Modules\Item\DataLayer\Models\RecordList;
-use Plenty\Modules\DataExchange\Models\FormatSetting;
 use vaola\Helper\vaolaHelper;
 use Plenty\Modules\Helper\Models\KeyValue;
 use Plenty\Modules\Market\Helper\Contracts\MarketPropertyHelperRepositoryContract;
@@ -242,7 +241,7 @@ class vaolaDE extends CSVGenerator
                 $primarycolor = $this->vaolaHelper->getColor($item, $settings);                
             }     
             
-            $sportart = "";
+           
             $sportart = $item->itemBase->free8;
             if($sportart == "" || $sportart == 0){
                 $sportart = "Radsport";
@@ -266,10 +265,8 @@ class vaolaDE extends CSVGenerator
             
             
             
-        $vat = $this->getVatClassId($item);
         $stockList = $this->getStockList($item);
-        $priceList = $this->getPriceList($item, $settings);
-        $basePriceComponentList = $this->getBasePriceComponentList($item);
+        
 		$data = [
                     'ID'				=> $item->itemBase->id,
                     'Produktname'			=> $this->vaolaHelper->getName($item, $settings, 150),
@@ -346,7 +343,7 @@ class vaolaDE extends CSVGenerator
                 $primarycolor = $this->vaolaHelper->getColor($item, $settings);                
             }     
             
-            $sportart = "";
+            
             $sportart = $item->itemBase->free8;
             if($sportart == "" || $sportart == 0){
                 $sportart = "Radsport";
@@ -365,7 +362,7 @@ class vaolaDE extends CSVGenerator
             
             
             
-        $vat = $this->getVatClassId($item);
+        
         $stockList = $this->getStockList($item);
 		$data = [
                     'ID'				=> $item->itemBase->id,
@@ -446,7 +443,7 @@ class vaolaDE extends CSVGenerator
                 $primarycolor = $this->vaolaHelper->getColor($item, $settings);                
             }     
             
-            $sportart = "";
+            
             $sportart = $item->itemBase->free8;
             if($sportart == "" || $sportart == 0){
                 $sportart = "Radsport";

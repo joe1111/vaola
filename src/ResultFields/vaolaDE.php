@@ -1,7 +1,6 @@
 <?php
 namespace vaola\ResultFields;
 use Plenty\Modules\DataExchange\Contracts\ResultFields;
-use Plenty\Modules\DataExchange\Models\FormatSetting;
 use Plenty\Modules\Helper\Services\ArrayHelper;
 /**
  * Class vaolaDE
