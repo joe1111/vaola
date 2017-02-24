@@ -19,7 +19,7 @@ class vaolaServiceProvider extends DataExchangeServiceProvider
 				$format,
 				'vaola\ResultFields\\'.$format,
 				'vaola\Generators\\'.$format,
-				''
+				'vaola\Filters\\' . $format
 			);
 		}
 	}
