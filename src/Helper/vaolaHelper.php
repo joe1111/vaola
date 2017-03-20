@@ -890,7 +890,7 @@ class vaolaHelper
     }
     
     
-    public function getMaterial(Record $item, KeyValue $settings)
+    public function getMaterial(Record $item)
     {
        
         foreach($item->itemPropertyList as $property)
