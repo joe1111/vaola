@@ -1,5 +1,6 @@
 {
   "name": "vaola",
+  "shortDescription"  : {"de":"vaola de","en":"vaola en"},
   "description": null,
   "namespace": "vaola",
   "author": "vaola",
