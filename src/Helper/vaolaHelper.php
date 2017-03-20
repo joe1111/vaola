@@ -893,9 +893,6 @@ class vaolaHelper
     public function getMaterial(Record $item, KeyValue $settings)
     {
         
-        return json_encode($item->itemPropertyList);
-        
-       
         foreach($item->itemPropertyList as $property)
         {
             $prop = $this->propertyRepositoryContract->findById($property->propertyId);
