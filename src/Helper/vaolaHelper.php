@@ -871,7 +871,7 @@ class vaolaHelper
     
     
     
-     public function getGender(Record $item, KeyValue $settings)
+    public function getGender(Record $item, KeyValue $settings)
     {
        
         foreach($item->itemPropertyList as $property)
@@ -887,8 +887,28 @@ class vaolaHelper
         
         return "Unisex";
         
+    }
+    
+    
+    public function getMaterial(Record $item, KeyValue $settings)
+    {
+       
+        foreach($item->itemPropertyList as $property)
+        {
+            $prop = $this->propertyRepositoryContract->findById($property->propertyId);
+            $propgroup =  $prop->propertyGroupId;
+            $backendname = $prop->backendName;
+            
+            if($propgroup == 5){                
+                return $backendname;
+            } 
+        }
+        
+        return "Material";
         
     }
+    
+    
     
     
     public function getColor(Record $item, KeyValue $settings)
