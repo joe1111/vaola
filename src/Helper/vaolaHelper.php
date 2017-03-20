@@ -890,9 +890,12 @@ class vaolaHelper
     }
     
     
-    public function getMaterial(Record $item)
+    public function getMaterial(Record $item, KeyValue $settings)
     {
-       return "Material";
+        
+        return json_encode($item->itemPropertyList);
+        
+       
         foreach($item->itemPropertyList as $property)
         {
             $prop = $this->propertyRepositoryContract->findById($property->propertyId);
@@ -900,7 +903,7 @@ class vaolaHelper
             $backendname = $prop->backendName;
             
             if($propgroup == 5){                
-                return "Material: " . json_encode($prop);
+                return $backendname;
             } 
         }
         
