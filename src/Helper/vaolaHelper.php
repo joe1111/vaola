@@ -900,7 +900,7 @@ class vaolaHelper
             $backendname = $prop->backendName;
             
             if($propgroup == 5){                
-                return $backendname;
+                return "Material: " .$backendname;
             } 
         }
         
