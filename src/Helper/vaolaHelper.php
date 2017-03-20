@@ -892,7 +892,7 @@ class vaolaHelper
     
     public function getMaterial(Record $item)
     {
-       
+       return "Material";
         foreach($item->itemPropertyList as $property)
         {
             $prop = $this->propertyRepositoryContract->findById($property->propertyId);
