@@ -904,7 +904,7 @@ class vaolaHelper
             } 
         }
         
-        return "Material";
+        return "keine Herstellerangabe";
         
     }
     
