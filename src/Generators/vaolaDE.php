@@ -308,7 +308,7 @@ class vaolaDE extends CSVGenerator
                     'a_media[image]{3}'                 => $this->getImageByNumber($item, $settings, 3), 
                     'a_media[image]{4}'                 => $this->getImageByNumber($item, $settings, 4), 
                     'a_active'                          => '1', 
-                    'a_stock'                           => $stockList['stock']-3,
+                    'a_stock'                           => $stockList['stock'],
                     'a_delivery'                        => $this->vaolaHelper->getAvailability($item, $settings, false),
                     'a_shipping_type'                   => 'SPED', 
                     
@@ -411,7 +411,7 @@ class vaolaDE extends CSVGenerator
                     'a_media[image]{3}'                 => $this->getImageByNumber($item, $settings, 3), 
                     'a_media[image]{4}'                 => $this->getImageByNumber($item, $settings, 4), 
                     'a_active'                          => '1', 
-                    'a_stock'                           => $stockList['stock']-3,
+                    'a_stock'                           => $stockList['stock'],
                     'a_delivery'                        => $this->vaolaHelper->getAvailability($item, $settings, false),
                     'a_shipping_type'                   => 'SPED', 
                     
@@ -516,7 +516,7 @@ class vaolaDE extends CSVGenerator
                     'a_media[image]{3}'                 => $this->getImageByNumber($item, $settings, 3), 
                     'a_media[image]{4}'                 => $this->getImageByNumber($item, $settings, 4), 
                     'a_active'                          => '1', 
-                    'a_stock'                           => $stockList['stock']-3,
+                    'a_stock'                           => $stockList['stock'],
                     'a_delivery'                        => $this->vaolaHelper->getAvailability($item, $settings, false),
                     'a_shipping_type'                   => 'SPED', 
                     
