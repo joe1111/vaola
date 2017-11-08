@@ -502,20 +502,6 @@ class vaolaHelper
             return $item->variationRetailPrice->price;
     }
     
-    
-    public function getAllPrices(Record $item)
-    {
-            $len = sizeof($item->variationRetailPriceList);
-            $ret = "Len: ". $len . " / ";
-            //for ($i=0; $i< $len; $i++){
-            //    $ret = $ret . "$i: ".$item->variationRetailPriceList[$i] . " / ";
-            //}
-            
-            
-            return $ret;
-    }
-    
-    
     /**
      * returns the recommendedRetailPrice of the given variation if transferRrp is set
      * @param Record $item
