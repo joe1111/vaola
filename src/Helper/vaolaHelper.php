@@ -508,7 +508,7 @@ class vaolaHelper
             $len = sizeof($item->variationRetailPriceList);
             $ret = "Len: ". $len . " / ";
             for ($i=0; $i< $len; $i++){
-                $ret = $ret . variationRetailPriceList[$i] . " / ";
+                $ret = $ret . $item->variationRetailPriceList[$i] . " / ";
             }
             
             
