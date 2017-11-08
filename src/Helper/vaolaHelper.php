@@ -502,6 +502,7 @@ class vaolaHelper
             return $item->variationRetailPrice->price;
     }
     
+    
     public function getAllPrices(Record $item)
     {
             return $item->variationRetailPriceList;
