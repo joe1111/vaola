@@ -504,7 +504,7 @@ class vaolaHelper
     
     public function getKlingelPrice(Record $item)
     {
-            $vk_klingel = floor(($item->variationRetailPrice->price) * 1.05, -1)+9;
+            $vk_klingel = round(($item->variationRetailPrice->price) * 1.05, -1)-1;
             return $vk_klingel;
     }
     
