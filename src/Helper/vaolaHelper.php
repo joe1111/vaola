@@ -497,9 +497,15 @@ class vaolaHelper
      * @param  Record   $item
      * @return float|null
      */
-    public function getPrice(Record $item)
+    public function getVaolaPrice(Record $item)
     {
             return $item->variationRetailPrice->price;
+    }
+    
+    public function getKlingelPrice(Record $item)
+    {
+            $vk_klingel = round(($item->variationRetailPrice->price) * 1.05, -1);
+            return $vk_klingel;
     }
     
     /**

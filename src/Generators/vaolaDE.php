@@ -254,7 +254,8 @@ class vaolaDE extends CSVGenerator
             }
             
             
-            $vk = number_format($this->vaolaHelper->getPrice($item), 2, '.', '');
+            $vk = number_format($this->vaolaHelper->getVaolaPrice($item), 2, '.', '');
+            $vk_klingel = number_format($this->vaolaHelper->getKlingelPrice($item), 2, '.', '');
             $uvp = number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', '');
             if($uvp == "0.00"){
                 $uvp = $vk;
@@ -295,10 +296,10 @@ class vaolaDE extends CSVGenerator
                     'a_comp[Größe]'                     => $size, 
                     'a_vk[msde]'                        => $vk,
                     'a_uvp[msde]'                       => $uvp,
-                    'a_vk[klde]'                        => $vk,
+                    'a_vk[klde]'                        => $vk_klingel,
                     'a_uvp[klde]'                       => $uvp,
                     'vk_old[klde]'                       => $uvp,
-                    'a_vk[kmde]'                        => $vk,
+                    'a_vk[kmde]'                        => $vk_klingel,
                     'a_uvp[kmde]'                       => $uvp,
                     'vk_old[kmde]'                       => $uvp,
                     'a_mwst[msde]'                      => '2', 
@@ -362,7 +363,8 @@ class vaolaDE extends CSVGenerator
             }
             
             
-            $vk = number_format($this->vaolaHelper->getPrice($item), 2, '.', '');
+            $vk = number_format($this->vaolaHelper->getVaolaPrice($item), 2, '.', '');
+            $vk_klingel = number_format($this->vaolaHelper->getKlingelPrice($item), 2, '.', '');
             $uvp = number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', '');
             if($uvp == "0.00"){
                 $uvp = $vk;
@@ -396,10 +398,10 @@ class vaolaDE extends CSVGenerator
                     'a_comp[Größe]'                     => $size, 
                     'a_vk[msde]'                        => $vk,
                     'a_uvp[msde]'                       => $uvp,
-                    'a_vk[klde]'                        => $vk,
+                    'a_vk[klde]'                        => $vk_klingel,
                     'a_uvp[klde]'                       => $uvp,
                     'vk_old[klde]'                       => $uvp,
-                    'a_vk[kmde]'                        => $vk,
+                    'a_vk[kmde]'                        => $vk_klingel,
                     'a_uvp[kmde]'                       => $uvp,
                     'vk_old[kmde]'                       => $uvp,
                     'a_mwst[msde]'                      => '2', 
@@ -465,7 +467,8 @@ class vaolaDE extends CSVGenerator
                 $sportart = "Radsport";
             }
             
-             $vk = number_format($this->vaolaHelper->getPrice($item), 2, '.', '');
+             $vk = number_format($this->vaolaHelper->getVaolaPrice($item), 2, '.', '');
+             $vk_klingel = number_format($this->vaolaHelper->getKlingelPrice($item), 2, '.', '');
             $uvp = number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', '');
             if($uvp == "0.00"){
                 $uvp = $vk;
@@ -499,10 +502,10 @@ class vaolaDE extends CSVGenerator
                     'a_comp[Größe]'                     => $size, 
                     'a_vk[msde]'                        => $vk,
                     'a_uvp[msde]'                       => $uvp, 
-                    'a_vk[klde]'                        => $vk,
+                    'a_vk[klde]'                        => $vk_klingel,
                     'a_uvp[klde]'                       => $uvp,
                     'vk_old[klde]'                       => $uvp,
-                    'a_vk[kmde]'                        => $vk,
+                    'a_vk[kmde]'                        => $vk_klingel,
                     'a_uvp[kmde]'                       => $uvp,
                     'vk_old[kmde]'                       => $uvp,
                     'a_mwst[msde]'                      => '2', 
@@ -716,7 +719,7 @@ class vaolaDE extends CSVGenerator
      */
     private function getPriceList(Record $item, KeyValue $settings):array
     {
-        $variationPrice = $this->vaolaHelper->getPrice($item);
+        $variationPrice = $this->vaolaHelper->getVaolaPrice($item);
         $variationRrp = $this->vaolaHelper->getRecommendedRetailPrice($item, $settings);
         $variationSpecialPrice = $this->vaolaHelper->getSpecialPrice($item, $settings);
         //setting retail price as selling price without a reduced price
