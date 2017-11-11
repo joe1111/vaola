@@ -507,8 +507,6 @@ class vaolaHelper
             $vk_klingel = round(($item->variationRetailPrice->price) * 1.05, -1)-1;
             return number_format($vk_klingel , 2, '.', '');
        
-        
-        
     }
     
     /**
