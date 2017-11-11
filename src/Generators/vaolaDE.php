@@ -255,7 +255,7 @@ class vaolaDE extends CSVGenerator
             
             
             $vk = number_format($this->vaolaHelper->getVaolaPrice($item), 2, '.', '');
-            $vk_klingel = number_format($this->vaolaHelper->getKlingelPrice($item), 2, '.', '');
+            $vk_klingel = $this->vaolaHelper->getKlingelPrice($item);
             $uvp = number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', '');
             if($uvp == "0.00"){
                 $uvp = $vk;
@@ -364,7 +364,7 @@ class vaolaDE extends CSVGenerator
             
             
             $vk = number_format($this->vaolaHelper->getVaolaPrice($item), 2, '.', '');
-            $vk_klingel = number_format($this->vaolaHelper->getKlingelPrice($item), 2, '.', '');
+           $vk_klingel = $this->vaolaHelper->getKlingelPrice($item);
             $uvp = number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', '');
             if($uvp == "0.00"){
                 $uvp = $vk;
@@ -468,7 +468,7 @@ class vaolaDE extends CSVGenerator
             }
             
              $vk = number_format($this->vaolaHelper->getVaolaPrice($item), 2, '.', '');
-             $vk_klingel = number_format($this->vaolaHelper->getKlingelPrice($item), 2, '.', '');
+             $vk_klingel = $this->vaolaHelper->getKlingelPrice($item);
             $uvp = number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', '');
             if($uvp == "0.00"){
                 $uvp = $vk;
