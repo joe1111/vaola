@@ -58,7 +58,7 @@ class vaolaDE extends CSVGenerator
 		{
 			$settings = $this->arrayHelper->buildMapFromObjectList($formatSettings, 'key', 'value');
 			$this->setDelimiter(";");
-						
+			$marketlabel = $this->vaolaHelper->getMarketLabel($settings);			
 				$this->addCSVContent([
                                     'p_nr',    
                                     'p_name',
@@ -79,8 +79,8 @@ class vaolaDE extends CSVGenerator
                                     'a_prodnr', 
                                     'a_ean', 
                                     'a_comp[Größe]', 
-                                    'a_vk[msde]',                                      
-                                    'a_uvp[msde]',                                    
+                                    "a_vk[$marketlabel]",                                      
+                                    "a_uvp[$marketlabel]",                                    
                                     'a_mwst[msde]', 
                                     'a_media[image]{0}', 
                                     'a_media[image]{1}', 
