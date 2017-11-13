@@ -385,8 +385,7 @@ class vaolaDE extends CSVGenerator
                     'a_ean'                             => $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
                     'a_comp[Größe]'                     => $size, 
                     'a_vk[msde]'                        => $vk,
-                    'a_uvp[msde]'                       => $uvp,
-                    
+                    'a_uvp[msde]'                       => $uvp,                    
                     'a_mwst[msde]'                      => '2', 
                     'a_media[image]{0}'                 => $this->getImageByNumber($item, $settings, 0),
                     'a_media[image]{1}'                 => $this->getImageByNumber($item, $settings, 1),
@@ -484,8 +483,7 @@ class vaolaDE extends CSVGenerator
                     'a_ean'                             => $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
                     'a_comp[Größe]'                     => $size, 
                     'a_vk[msde]'                        => $vk,
-                    'a_uvp[msde]'                       => $uvp, 
-                    
+                    'a_uvp[msde]'                       => $uvp,                     
                     'a_mwst[msde]'                      => '2', 
                     'a_media[image]{0}'                 => $this->getImageByNumber($item, $settings, 0),
                     'a_media[image]{1}'                 => $this->getImageByNumber($item, $settings, 1),
