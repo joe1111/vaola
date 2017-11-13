@@ -503,6 +503,18 @@ class vaolaHelper
     }
     
   
+    public function getMarketLabel(KeyValue $settings){
+        
+        $marketlabelID = $settings->get('marketId');
+        
+        if($marketlabelID == 10){
+            return "msde";
+        }
+        
+        if($marketlabelID == 12){
+            return "klde";
+        }
+    }
     
     /**
      * returns the recommendedRetailPrice of the given variation if transferRrp is set
