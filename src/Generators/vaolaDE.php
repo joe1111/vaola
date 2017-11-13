@@ -58,7 +58,7 @@ class vaolaDE extends CSVGenerator
 		{
 			$settings = $this->arrayHelper->buildMapFromObjectList($formatSettings, 'key', 'value');
 			$this->setDelimiter(";");
-			$marketlabel = $this->vaolaHelper->getMarketLabel($settings);			
+						
 				$this->addCSVContent([
                                     'p_nr',    
                                     'p_name',
@@ -79,8 +79,8 @@ class vaolaDE extends CSVGenerator
                                     'a_prodnr', 
                                     'a_ean', 
                                     'a_comp[Größe]', 
-                                    "a_vk[$marketlabel]",                                      
-                                    "a_uvp[$marketlabel]",                                    
+                                    'a_vk[msde]',                                      
+                                    'a_uvp[msde]',                                    
                                     'a_mwst[msde]', 
                                     'a_media[image]{0}', 
                                     'a_media[image]{1}', 
@@ -259,9 +259,13 @@ class vaolaDE extends CSVGenerator
                 $size = "Unisize";
             }
             
-            $marketlabel = $this->vaolaHelper->getMarketLabel($settings);
-            
                 
+                            
+            
+            
+            
+            
+            
         $stockList = $this->getStockList($item);
         
 		$data = [
@@ -284,8 +288,8 @@ class vaolaDE extends CSVGenerator
                     'a_prodnr'                          => $this->vaolaHelper->getVariationNumber($item),
                     'a_ean'                             => $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
                     'a_comp[Größe]'                     => $size, 
-                    "a_vk[$marketlabel]"                        => $vk,
-                    "a_uvp[$marketlabel]"                       => $uvp,                    
+                    'a_vk[msde]'                        => $vk,
+                    'a_uvp[msde]'                       => $uvp,                    
                     'a_mwst[msde]'                      => '2', 
                     'a_media[image]{0}'                 => $this->getImageByNumber($item, $settings, 0),
                     'a_media[image]{1}'                 => $this->getImageByNumber($item, $settings, 1),
@@ -357,7 +361,7 @@ class vaolaDE extends CSVGenerator
             if($size == ""){
                 $size = "Unisize";
             }
-            $marketlabel = $this->vaolaHelper->getMarketLabel($settings);
+            
         
         $stockList = $this->getStockList($item);
 		$data = [
@@ -380,8 +384,8 @@ class vaolaDE extends CSVGenerator
                     'a_prodnr'                          => $this->vaolaHelper->getVariationNumber($item),
                     'a_ean'                             => $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
                     'a_comp[Größe]'                     => $size, 
-                    "a_vk[$marketlabel]"                        => $vk,
-                    "a_uvp[$marketlabel]"                       => $uvp,                          
+                    'a_vk[msde]'                        => $vk,
+                    'a_uvp[msde]'                       => $uvp,                    
                     'a_mwst[msde]'                      => '2', 
                     'a_media[image]{0}'                 => $this->getImageByNumber($item, $settings, 0),
                     'a_media[image]{1}'                 => $this->getImageByNumber($item, $settings, 1),
@@ -446,7 +450,7 @@ class vaolaDE extends CSVGenerator
             }
             
              $vk = number_format($this->vaolaHelper->getVaolaPrice($item), 2, '.', '');
-             
+             $vk_klingel = $this->vaolaHelper->getKlingelPrice($item);
             $uvp = number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', '');
             if($uvp == "0.00"){
                 $uvp = $vk;
@@ -455,7 +459,7 @@ class vaolaDE extends CSVGenerator
             if($size == ""){
                 $size = "Unisize";
             }
-            $marketlabel = $this->vaolaHelper->getMarketLabel($settings);
+            
         $stockList = $this->getStockList($item);
         
 		$data = [                    
@@ -478,8 +482,8 @@ class vaolaDE extends CSVGenerator
                     'a_prodnr'                          => $this->vaolaHelper->getVariationNumber($item),
                     'a_ean'                             => $this->vaolaHelper->getBarcodeByType($item, $settings->get('barcode')),
                     'a_comp[Größe]'                     => $size, 
-                    "a_vk[$marketlabel]"                        => $vk,
-                    "a_uvp[$marketlabel]"                       => $uvp,                  
+                    'a_vk[msde]'                        => $vk,
+                    'a_uvp[msde]'                       => $uvp,                     
                     'a_mwst[msde]'                      => '2', 
                     'a_media[image]{0}'                 => $this->getImageByNumber($item, $settings, 0),
                     'a_media[image]{1}'                 => $this->getImageByNumber($item, $settings, 1),
