@@ -450,7 +450,7 @@ class vaolaDE extends CSVGenerator
             }
             
              $vk = number_format($this->vaolaHelper->getVaolaPrice($item), 2, '.', '');
-             $vk_klingel = $this->vaolaHelper->getKlingelPrice($item);
+             
             $uvp = number_format($this->vaolaHelper->getRecommendedRetailPrice($item, $settings), 2, '.', '');
             if($uvp == "0.00"){
                 $uvp = $vk;
