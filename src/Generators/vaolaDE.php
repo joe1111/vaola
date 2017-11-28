@@ -240,7 +240,7 @@ class vaolaDE extends CSVGenerator
                     $size = $aattributes[$i];
                     $sizetype = "Größe";
                 }
-                elseif($aattributenames[$i] == "Highlight 1"){
+                elseif($aattributenames[$i] == "Highlight1"){
                     $highlight1 = $aattributes[$i];
                 }
                 elseif($aattributenames[$i] == "Highlight 2"){
@@ -378,7 +378,7 @@ class vaolaDE extends CSVGenerator
                     $sizetype = "Größe";                    
                 }
                 
-                elseif($aattributenames[$i] == "Highlight 1"){
+                elseif($aattributenames[$i] == "Highlight1"){
                     $highlight1 = $aattributes[$i];
                 }
                 elseif($aattributenames[$i] == "Highlight 2"){
@@ -497,7 +497,7 @@ class vaolaDE extends CSVGenerator
                     $sizetype = "Größe";                    
                 }
                 
-                elseif($aattributenames[$i] == "Highlight 1"){
+                elseif($aattributenames[$i] == "Highlight1"){
                     $highlight1 = $aattributes[$i];
                 }
                 elseif($aattributenames[$i] == "Highlight 2"){
