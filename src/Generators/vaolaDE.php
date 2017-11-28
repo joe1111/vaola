@@ -90,7 +90,14 @@ class vaolaDE extends CSVGenerator
                                     'a_active', 
                                     'a_stock', 
                                     'a_delivery', 
-                                    'a_shipping_type',                                     
+                                    'a_shipping_type',
+                                    'p_bullet{1}',
+                                    'p_bullet{2}',
+                                    'p_bullet{3}',
+                                    'p_bullet{4}',
+                                    'p_bullet{5}',
+                                            
+                                            
 			]);
 			$currentItemId = null;
 			$previousItemId = null;
@@ -214,6 +221,11 @@ class vaolaDE extends CSVGenerator
             $primarycolor = "";
             $size = "";
             $sizetype = "";
+            $highlight1 = "";
+            $highlight2 = "";
+            $highlight3 = "";
+            $highlight4 = "";
+            $highlight5 = "";
             
             for($i = 0; $i < count($aattributenames); $i++){                
                 if($aattributenames[$i] == "Farbe"){
@@ -224,10 +236,24 @@ class vaolaDE extends CSVGenerator
                     $sizetype = "Rahmengröße";
                     
                 }
-                 elseif($aattributenames[$i] == "Größe"){
+                elseif($aattributenames[$i] == "Größe"){
                     $size = $aattributes[$i];
                     $sizetype = "Größe";
-                    
+                }
+                elseif($aattributenames[$i] == "Highlight 1"){
+                    $highlight1 = $aattributes[$i];
+                }
+                elseif($aattributenames[$i] == "Highlight 2"){
+                    $highlight2 = $aattributes[$i];
+                }
+                elseif($aattributenames[$i] == "Highlight 3"){
+                    $highlight3 = $aattributes[$i];
+                }
+                elseif($aattributenames[$i] == "Highlight 4"){
+                    $highlight4 = $aattributes[$i];
+                }
+                elseif($aattributenames[$i] == "Highlight 5"){
+                    $highlight5 = $aattributes[$i];
                 }
             }
             
@@ -300,6 +326,12 @@ class vaolaDE extends CSVGenerator
                     'a_stock'                           => $stockList['stock'],
                     'a_delivery'                        => $this->vaolaHelper->getAvailability($item, $settings, false),
                     'a_shipping_type'                   => 'SPED', 
+                    'p_bullet{1}'                       => $highlight1, 
+                    'p_bullet{2}'                       => $highlight2, 
+                    'p_bullet{3}'                       => $highlight3, 
+                    'p_bullet{4}'                       => $highlight4, 
+                    'p_bullet{5}'                       => $highlight5, 
+                    
                     
                     
 		];
@@ -325,6 +357,13 @@ class vaolaDE extends CSVGenerator
             $primarycolor = "";
             $size = "";
             $sizetype = "";
+            $highlight1 = "";
+            $highlight2 = "";
+            $highlight3 = "";
+            $highlight4 = "";
+            $highlight5 = "";
+            
+            
             
             for($i = 0; $i < count($aattributenames); $i++){                
                 if($aattributenames[$i] == "Farbe"){
@@ -337,6 +376,22 @@ class vaolaDE extends CSVGenerator
                  elseif($aattributenames[$i] == "Größe"){
                     $size = $aattributes[$i];
                     $sizetype = "Größe";                    
+                }
+                
+                elseif($aattributenames[$i] == "Highlight 1"){
+                    $highlight1 = $aattributes[$i];
+                }
+                elseif($aattributenames[$i] == "Highlight 2"){
+                    $highlight2 = $aattributes[$i];
+                }
+                elseif($aattributenames[$i] == "Highlight 3"){
+                    $highlight3 = $aattributes[$i];
+                }
+                elseif($aattributenames[$i] == "Highlight 4"){
+                    $highlight4 = $aattributes[$i];
+                }
+                elseif($aattributenames[$i] == "Highlight 5"){
+                    $highlight5 = $aattributes[$i];
                 }
             }
             
@@ -396,7 +451,11 @@ class vaolaDE extends CSVGenerator
                     'a_stock'                           => $stockList['stock'],
                     'a_delivery'                        => $this->vaolaHelper->getAvailability($item, $settings, false),
                     'a_shipping_type'                   => 'SPED', 
-                    
+                    'p_bullet{1}'                       => $highlight1, 
+                    'p_bullet{2}'                       => $highlight2, 
+                    'p_bullet{3}'                       => $highlight3, 
+                    'p_bullet{4}'                       => $highlight4, 
+                    'p_bullet{5}'                       => $highlight5, 
                     
 		];
 		
@@ -419,6 +478,11 @@ class vaolaDE extends CSVGenerator
             $primarycolor = "";
             $size = "";
             $sizetype = "";
+            $highlight1 = "";
+            $highlight2 = "";
+            $highlight3 = "";
+            $highlight4 = "";
+            $highlight5 = "";
             
             for($i = 0; $i < count($aattributenames); $i++){                
                 if($aattributenames[$i] == "Farbe"){
@@ -431,6 +495,22 @@ class vaolaDE extends CSVGenerator
                  elseif($aattributenames[$i] == "Größe"){
                     $size = $aattributes[$i];
                     $sizetype = "Größe";                    
+                }
+                
+                elseif($aattributenames[$i] == "Highlight 1"){
+                    $highlight1 = $aattributes[$i];
+                }
+                elseif($aattributenames[$i] == "Highlight 2"){
+                    $highlight2 = $aattributes[$i];
+                }
+                elseif($aattributenames[$i] == "Highlight 3"){
+                    $highlight3 = $aattributes[$i];
+                }
+                elseif($aattributenames[$i] == "Highlight 4"){
+                    $highlight4 = $aattributes[$i];
+                }
+                elseif($aattributenames[$i] == "Highlight 5"){
+                    $highlight5 = $aattributes[$i];
                 }
             }
             
@@ -494,7 +574,11 @@ class vaolaDE extends CSVGenerator
                     'a_stock'                           => $stockList['stock'],
                     'a_delivery'                        => $this->vaolaHelper->getAvailability($item, $settings, false),
                     'a_shipping_type'                   => 'SPED', 
-                    
+                    'p_bullet{1}'                       => $highlight1, 
+                    'p_bullet{2}'                       => $highlight2, 
+                    'p_bullet{3}'                       => $highlight3, 
+                    'p_bullet{4}'                       => $highlight4, 
+                    'p_bullet{5}'                       => $highlight5, 
                     
                     
                     
