@@ -221,7 +221,7 @@ class vaolaDE extends CSVGenerator
             $primarycolor = "";
             $size = "";
             $sizetype = "";
-            $highlight1 = "";
+            $highlight1 = $sattributes;
             $highlight2 = "";
             $highlight3 = "";
             $highlight4 = "";
@@ -357,7 +357,7 @@ class vaolaDE extends CSVGenerator
             $primarycolor = "";
             $size = "";
             $sizetype = "";
-            $highlight1 = "";
+            $highlight1 = $sattributes;
             $highlight2 = "";
             $highlight3 = "";
             $highlight4 = "";
@@ -478,7 +478,7 @@ class vaolaDE extends CSVGenerator
             $primarycolor = "";
             $size = "";
             $sizetype = "";
-            $highlight1 = "";
+            $highlight1 = $sattributes;
             $highlight2 = "";
             $highlight3 = "";
             $highlight4 = "";
