@@ -910,8 +910,7 @@ class vaolaHelper
         
         
         $prop = $this->propertyRepositoryContract->findById(145);
-        
-        
+                
         return $prop;
         
     }
