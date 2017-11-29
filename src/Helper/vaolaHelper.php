@@ -905,13 +905,13 @@ class vaolaHelper
     }
     
     
-    public function getHighlight1()
+    public function getHighlight1(Record $item, KeyValue $settings)
     {
         
         
-        $prop = $this->propertyRepositoryContract->findById(145);
+        $prop = $item->itemPropertyList;
                 
-        return $prop;
+        return implode("/",$prop);
         
     }
     
