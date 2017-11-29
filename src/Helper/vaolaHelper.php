@@ -910,7 +910,11 @@ class vaolaHelper
         $str = "";
         foreach($item->itemPropertyList as $property)
         {
-            $str .= $property;
+            if($property->propertyId == 145){
+                $str = $property->propertyValue;
+            }
+            
+            
         }        
         return $str;
         
