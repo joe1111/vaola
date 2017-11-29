@@ -907,11 +907,12 @@ class vaolaHelper
     
     public function getHighlight1(Record $item, KeyValue $settings)
     {
-        
-        
-        $prop = $item->itemPropertyList;
-                
-        return implode("/",$prop);
+        $str = "";
+        foreach($item->itemPropertyList as $property)
+        {
+            $str .= $property;
+        }        
+        return $str;
         
     }
     
