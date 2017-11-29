@@ -905,6 +905,21 @@ class vaolaHelper
     }
     
     
+    public function getHighlight1()
+    {
+        
+        
+        $prop = $this->propertyRepositoryContract->findById(145);
+        json_decode($prop);   
+        
+        return $prop;
+        
+    }
+    
+    
+    
+    
+    
     
     
     public function getColor(Record $item, KeyValue $settings)
