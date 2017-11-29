@@ -905,12 +905,12 @@ class vaolaHelper
     }
     
     
-    public function getHighlight1(Record $item, KeyValue $settings)
+    public function getPropertyValueByID($id, Record $item, KeyValue $settings)
     {
         $str = "";
         foreach($item->itemPropertyList as $property)
         {
-            if($property->propertyId == 145){
+            if($property->propertyId == $id){
                 $str = $property->propertyValue;
             }
             

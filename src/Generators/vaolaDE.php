@@ -221,11 +221,6 @@ class vaolaDE extends CSVGenerator
             $primarycolor = "";
             $size = "";
             $sizetype = "";
-            $highlight1 = "";
-            $highlight2 = "";
-            $highlight3 = "";
-            $highlight4 = "";
-            $highlight5 = "";
             
             for($i = 0; $i < count($aattributenames); $i++){                
                 if($aattributenames[$i] == "Farbe"){
@@ -239,21 +234,6 @@ class vaolaDE extends CSVGenerator
                 elseif($aattributenames[$i] == "Größe"){
                     $size = $aattributes[$i];
                     $sizetype = "Größe";
-                }
-                elseif($aattributenames[$i] == "Highlight1"){
-                    $highlight1 = $aattributes[$i];
-                }
-                elseif($aattributenames[$i] == "Highlight 2"){
-                    $highlight2 = $aattributes[$i];
-                }
-                elseif($aattributenames[$i] == "Highlight 3"){
-                    $highlight3 = $aattributes[$i];
-                }
-                elseif($aattributenames[$i] == "Highlight 4"){
-                    $highlight4 = $aattributes[$i];
-                }
-                elseif($aattributenames[$i] == "Highlight 5"){
-                    $highlight5 = $aattributes[$i];
                 }
             }
             
@@ -326,11 +306,11 @@ class vaolaDE extends CSVGenerator
                     'a_stock'                           => $stockList['stock'],
                     'a_delivery'                        => $this->vaolaHelper->getAvailability($item, $settings, false),
                     'a_shipping_type'                   => 'SPED', 
-                    'p_bullet{1}'                       => $this->vaolaHelper->getHighlight1($item, $settings), 
-                    'p_bullet{2}'                       => $highlight2, 
-                    'p_bullet{3}'                       => $highlight3, 
-                    'p_bullet{4}'                       => $highlight4, 
-                    'p_bullet{5}'                       => $highlight5, 
+                    'p_bullet{1}'                       => $this->vaolaHelper->getPropertyValueByID(145, $item, $settings), 
+                    'p_bullet{2}'                       => $this->vaolaHelper->getPropertyValueByID(146, $item, $settings), 
+                    'p_bullet{3}'                       => $this->vaolaHelper->getPropertyValueByID(147, $item, $settings), 
+                    'p_bullet{4}'                       => $this->vaolaHelper->getPropertyValueByID(148, $item, $settings), 
+                    'p_bullet{5}'                       => $this->vaolaHelper->getPropertyValueByID(149, $item, $settings), 
                     
                     
                     
@@ -357,12 +337,6 @@ class vaolaDE extends CSVGenerator
             $primarycolor = "";
             $size = "";
             $sizetype = "";
-            $highlight1 = "";
-            $highlight2 = "";
-            $highlight3 = "";
-            $highlight4 = "";
-            $highlight5 = "";
-            
             
             
             for($i = 0; $i < count($aattributenames); $i++){                
@@ -378,21 +352,6 @@ class vaolaDE extends CSVGenerator
                     $sizetype = "Größe";                    
                 }
                 
-                elseif($aattributenames[$i] == "Highlight1"){
-                    $highlight1 = $aattributes[$i];
-                }
-                elseif($aattributenames[$i] == "Highlight 2"){
-                    $highlight2 = $aattributes[$i];
-                }
-                elseif($aattributenames[$i] == "Highlight 3"){
-                    $highlight3 = $aattributes[$i];
-                }
-                elseif($aattributenames[$i] == "Highlight 4"){
-                    $highlight4 = $aattributes[$i];
-                }
-                elseif($aattributenames[$i] == "Highlight 5"){
-                    $highlight5 = $aattributes[$i];
-                }
             }
             
             if($primarycolor == ""){                
@@ -451,11 +410,11 @@ class vaolaDE extends CSVGenerator
                     'a_stock'                           => $stockList['stock'],
                     'a_delivery'                        => $this->vaolaHelper->getAvailability($item, $settings, false),
                     'a_shipping_type'                   => 'SPED', 
-                    'p_bullet{1}'                       => $this->vaolaHelper->getHighlight1($item, $settings), 
-                    'p_bullet{2}'                       => $highlight2, 
-                    'p_bullet{3}'                       => $highlight3, 
-                    'p_bullet{4}'                       => $highlight4, 
-                    'p_bullet{5}'                       => $highlight5, 
+                    'p_bullet{1}'                       => $this->vaolaHelper->getPropertyValueByID(145, $item, $settings), 
+                    'p_bullet{2}'                       => $this->vaolaHelper->getPropertyValueByID(146, $item, $settings), 
+                    'p_bullet{3}'                       => $this->vaolaHelper->getPropertyValueByID(147, $item, $settings), 
+                    'p_bullet{4}'                       => $this->vaolaHelper->getPropertyValueByID(148, $item, $settings), 
+                    'p_bullet{5}'                       => $this->vaolaHelper->getPropertyValueByID(149, $item, $settings), 
                     
 		];
 		
@@ -478,11 +437,6 @@ class vaolaDE extends CSVGenerator
             $primarycolor = "";
             $size = "";
             $sizetype = "";
-            $highlight1 = "";
-            $highlight2 = "";
-            $highlight3 = "";
-            $highlight4 = "";
-            $highlight5 = "";
             
             for($i = 0; $i < count($aattributenames); $i++){                
                 if($aattributenames[$i] == "Farbe"){
@@ -495,22 +449,6 @@ class vaolaDE extends CSVGenerator
                  elseif($aattributenames[$i] == "Größe"){
                     $size = $aattributes[$i];
                     $sizetype = "Größe";                    
-                }
-                
-                elseif($aattributenames[$i] == "Highlight1"){
-                    $highlight1 = $aattributes[$i];
-                }
-                elseif($aattributenames[$i] == "Highlight 2"){
-                    $highlight2 = $aattributes[$i];
-                }
-                elseif($aattributenames[$i] == "Highlight 3"){
-                    $highlight3 = $aattributes[$i];
-                }
-                elseif($aattributenames[$i] == "Highlight 4"){
-                    $highlight4 = $aattributes[$i];
-                }
-                elseif($aattributenames[$i] == "Highlight 5"){
-                    $highlight5 = $aattributes[$i];
                 }
             }
             
@@ -574,11 +512,11 @@ class vaolaDE extends CSVGenerator
                     'a_stock'                           => $stockList['stock'],
                     'a_delivery'                        => $this->vaolaHelper->getAvailability($item, $settings, false),
                     'a_shipping_type'                   => 'SPED', 
-                    'p_bullet{1}'                       => $this->vaolaHelper->getHighlight1($item, $settings), 
-                    'p_bullet{2}'                       => $highlight2, 
-                    'p_bullet{3}'                       => $highlight3, 
-                    'p_bullet{4}'                       => $highlight4, 
-                    'p_bullet{5}'                       => $highlight5, 
+                    'p_bullet{1}'                       => $this->vaolaHelper->getPropertyValueByID(145, $item, $settings), 
+                    'p_bullet{2}'                       => $this->vaolaHelper->getPropertyValueByID(146, $item, $settings), 
+                    'p_bullet{3}'                       => $this->vaolaHelper->getPropertyValueByID(147, $item, $settings), 
+                    'p_bullet{4}'                       => $this->vaolaHelper->getPropertyValueByID(148, $item, $settings), 
+                    'p_bullet{5}'                       => $this->vaolaHelper->getPropertyValueByID(149, $item, $settings), 
                     
                     
                     
